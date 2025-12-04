@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Nghỉ phép</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="home.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Đăng ký nghỉ phép</h1>
+        <button class="ml-auto text-sm font-semibold text-primary">Lịch sử</button>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Leave Balance Card -->
+        <div class="bg-gradient-to-r from-primary to-blue-800 rounded-2xl p-5 text-white shadow-lg animate-fade-in">
+            <p class="text-sm opacity-80 mb-1">Số ngày phép còn lại</p>
+            <div class="flex items-baseline gap-2">
+                <span class="text-4xl font-bold">12.5</span>
+                <span class="text-sm">ngày</span>
+            </div>
+            <div class="mt-4 flex gap-4 text-xs opacity-90">
+                <div>
+                    <span class="block font-bold">15.0</span>
+                    <span class="opacity-70">Tổng năm</span>
+                </div>
+                <div>
+                    <span class="block font-bold">2.5</span>
+                    <span class="opacity-70">Đã dùng</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Request Form -->
+        <form class="space-y-5 animate-fade-in delay-100">
+
+            <!-- Leave Type -->
+            <div class="space-y-2">
+                <label class="text-sm font-semibold text-slate-700">Loại nghỉ phép</label>
+                <div class="relative">
+                    <select
+                        class="w-full p-3 bg-white border border-slate-200 rounded-xl appearance-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary">
+                        <option>Phép năm (Annual Leave)</option>
+                        <option>Nghỉ ốm (Sick Leave)</option>
+                        <option>Nghỉ không lương (Unpaid Leave)</option>
+                        <option>Nghỉ bù (Compensatory Leave)</option>
+                    </select>
+                    <i data-lucide="chevron-down"
+                        class="absolute right-3 top-3.5 w-5 h-5 text-slate-400 pointer-events-none"></i>
+                </div>
+            </div>
+
+            <!-- Dates -->
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-2">
+                    <label class="text-sm font-semibold text-slate-700">Từ ngày</label>
+                    <div class="relative">
+                        <input type="date"
+                            class="w-full p-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-primary"
+                            value="2025-12-05">
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-semibold text-slate-700">Đến ngày</label>
+                    <div class="relative">
+                        <input type="date"
+                            class="w-full p-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-primary"
+                            value="2025-12-06">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Duration Display -->
+            <div class="bg-blue-50 p-3 rounded-xl flex items-center gap-3 border border-blue-100">
+                <i data-lucide="clock" class="w-5 h-5 text-primary"></i>
+                <span class="text-sm font-medium text-blue-900">Tổng thời gian: <span class="font-bold">2
+                        ngày</span></span>
+            </div>
+
+            <!-- Reason -->
+            <div class="space-y-2">
+                <label class="text-sm font-semibold text-slate-700">Lý do</label>
+                <textarea
+                    class="w-full p-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-primary h-24 resize-none"
+                    placeholder="Nhập lý do nghỉ..."></textarea>
+            </div>
+
+            <!-- Attachment -->
+            <div class="space-y-2">
+                <label class="text-sm font-semibold text-slate-700">Đính kèm (Tùy chọn)</label>
+                <div
+                    class="border-2 border-dashed border-slate-300 rounded-xl p-4 flex flex-col items-center justify-center text-slate-400 bg-slate-50 hover:bg-slate-100 transition-colors cursor-pointer">
+                    <i data-lucide="upload-cloud" class="w-6 h-6 mb-2"></i>
+                    <span class="text-xs">Chạm để tải lên ảnh/tài liệu</span>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button"
+                class="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-blue-900 transition-colors active:scale-95 transform">
+                Gửi yêu cầu
+            </button>
+
+        </form>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Tin tức</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="home.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Tin tức & Sự kiện</h1>
+        <div class="ml-auto flex gap-2">
+            <button class="p-2 rounded-full hover:bg-slate-100">
+                <i data-lucide="search" class="w-6 h-6 text-slate-600"></i>
+            </button>
+            <a href="kudos.html" class="p-2 rounded-full hover:bg-slate-100 text-secondary">
+                <i data-lucide="plus-circle" class="w-6 h-6"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Categories -->
+        <div class="flex gap-3 overflow-x-auto hide-scrollbar pb-2 animate-fade-in">
+            <button
+                class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium whitespace-nowrap shadow-md">Tất
+                cả</button>
+            <button
+                class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium whitespace-nowrap">Tin
+                công ty</button>
+            <button
+                class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium whitespace-nowrap">Sự
+                kiện</button>
+            <button
+                class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium whitespace-nowrap">Kudos</button>
+            <button
+                class="px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium whitespace-nowrap">Chính
+                sách</button>
+        </div>
+
+        <!-- Featured News -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md h-56 animate-fade-in delay-100 group">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                alt="Featured">
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-5">
+                <span class="bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-md w-fit mb-2">QUAN
+                    TRỌNG</span>
+                <h2 class="text-white font-bold text-lg leading-tight mb-2">Thông báo: Lịch nghỉ Tết Nguyên Đán 2026 và
+                    Chính sách thưởng</h2>
+                <div class="flex items-center gap-2 text-slate-300 text-xs">
+                    <span>HR Dept</span>
+                    <span>•</span>
+                    <span>2 giờ trước</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Feed -->
+        <div class="space-y-4 animate-fade-in delay-200">
+
+            <!-- Article Card -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex gap-4">
+                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                    class="w-24 h-24 rounded-lg object-cover shrink-0" alt="News">
+                <div class="flex flex-col justify-between flex-1">
+                    <div>
+                        <span class="text-[10px] font-bold text-blue-600 uppercase">Sự kiện</span>
+                        <h3 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1">Townhall Q4: Chiến lược chuyển
+                            đổi số toàn diện</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-xs text-muted">1 ngày trước</span>
+                        <div class="flex gap-3 text-slate-400">
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="heart" class="w-4 h-4"></i>
+                                <span class="text-xs">45</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span class="text-xs">12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kudos Post -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-3">
+                    <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                        class="w-10 h-10 rounded-full border border-slate-200" alt="User">
+                    <div>
+                        <p class="text-sm font-bold text-slate-800">Trần Thị B <span
+                                class="font-normal text-slate-500">đã gửi Kudos đến</span> Nguyễn Văn A</p>
+                        <p class="text-xs text-muted">2 giờ trước</p>
+                    </div>
+                </div>
+                <div class="bg-yellow-50 p-3 rounded-lg border border-yellow-100 mb-3">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i data-lucide="medal" class="w-5 h-5 text-secondary"></i>
+                        <span class="text-sm font-bold text-secondary">Going Extra Mile</span>
+                    </div>
+                    <p class="text-sm text-slate-700 italic">"Cảm ơn anh A đã hỗ trợ team em xử lý sự cố hệ thống vào
+                        cuối tuần vừa rồi. Thực sự rất trân trọng sự nhiệt tình của anh!"</p>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-100">
+                    <button class="flex items-center gap-2 text-slate-500 hover:text-red-500 transition-colors">
+                        <i data-lucide="heart" class="w-5 h-5"></i>
+                        <span class="text-xs font-medium">Thả tim</span>
+                    </button>
+                    <button class="flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        <span class="text-xs font-medium">Bình luận</span>
+                    </button>
+                    <button class="flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors">
+                        <i data-lucide="share-2" class="w-5 h-5"></i>
+                        <span class="text-xs font-medium">Chia sẻ</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Article Card -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex gap-4">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                    class="w-24 h-24 rounded-lg object-cover shrink-0" alt="News">
+                <div class="flex flex-col justify-between flex-1">
+                    <div>
+                        <span class="text-[10px] font-bold text-green-600 uppercase">Đào tạo</span>
+                        <h3 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1">Ra mắt khóa học mới: Kỹ năng lãnh
+                            đạo thời đại số</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-xs text-muted">3 ngày trước</span>
+                        <div class="flex gap-3 text-slate-400">
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="heart" class="w-4 h-4"></i>
+                                <span class="text-xs">28</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span class="text-xs">5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

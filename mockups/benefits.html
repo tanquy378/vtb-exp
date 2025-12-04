@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Phúc lợi & Bảo hiểm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="wellbeing.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Phúc lợi & Bảo hiểm</h1>
+        <a href="claim_form.html" class="ml-auto text-sm font-bold text-secondary">Yêu cầu bồi thường</a>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Insurance Card -->
+        <div
+            class="relative w-full aspect-[1.586] bg-gradient-to-br from-blue-900 to-indigo-800 rounded-2xl shadow-xl overflow-hidden p-5 text-white animate-fade-in">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <i data-lucide="shield" class="w-32 h-32"></i>
+            </div>
+
+            <div class="relative z-10 h-full flex flex-col justify-between">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h2 class="font-bold text-lg tracking-wider">HEALTH CARE</h2>
+                        <p class="text-xs opacity-80">Premium Plan</p>
+                    </div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png"
+                        class="w-12 h-12 bg-white p-1 rounded-lg" alt="QR">
+                </div>
+
+                <div>
+                    <p class="text-xs opacity-70 mb-1">Thẻ thành viên</p>
+                    <p class="font-mono text-lg tracking-widest">VN-8829-1102</p>
+                </div>
+
+                <div class="flex justify-between items-end">
+                    <div>
+                        <p class="text-xs opacity-70">Chủ thẻ</p>
+                        <p class="font-bold">NGUYEN VAN BANKER</p>
+                    </div>
+                    <div>
+                        <p class="text-xs opacity-70 text-right">Hết hạn</p>
+                        <p class="font-bold">12/2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coverage Summary -->
+        <section class="animate-fade-in delay-100">
+            <h2 class="text-lg font-bold text-primary mb-3">Hạn mức bảo hiểm</h2>
+            <div class="space-y-3">
+
+                <!-- Inpatient -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i data-lucide="bed" class="w-4 h-4"></i>
+                            </div>
+                            <span class="font-bold text-slate-800">Nội trú</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500">500tr / năm</span>
+                    </div>
+                    <div class="w-full h-2 bg-slate-100 rounded-full mb-1 overflow-hidden">
+                        <div class="h-full bg-blue-500 w-[10%]"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 text-right">Đã dùng: 50.000.000</p>
+                </div>
+
+                <!-- Outpatient -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                <i data-lucide="stethoscope" class="w-4 h-4"></i>
+                            </div>
+                            <span class="font-bold text-slate-800">Ngoại trú</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500">20tr / năm</span>
+                    </div>
+                    <div class="w-full h-2 bg-slate-100 rounded-full mb-1 overflow-hidden">
+                        <div class="h-full bg-green-500 w-[45%]"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 text-right">Đã dùng: 9.000.000</p>
+                </div>
+
+                <!-- Dental -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600">
+                                <i data-lucide="smile" class="w-4 h-4"></i>
+                            </div>
+                            <span class="font-bold text-slate-800">Nha khoa</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500">5tr / năm</span>
+                    </div>
+                    <div class="w-full h-2 bg-slate-100 rounded-full mb-1 overflow-hidden">
+                        <div class="h-full bg-orange-500 w-[80%]"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 text-right">Đã dùng: 4.000.000</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Other Benefits -->
+        <section class="animate-fade-in delay-200">
+            <h2 class="text-lg font-bold text-primary mb-3">Phúc lợi khác</h2>
+            <div class="grid grid-cols-2 gap-3">
+                <div
+                    class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center text-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+                        <i data-lucide="utensils" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted">Phụ cấp ăn trưa</p>
+                        <p class="font-bold text-sm text-slate-800">730.000 đ</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center text-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                        <i data-lucide="smartphone" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted">Phụ cấp điện thoại</p>
+                        <p class="font-bold text-sm text-slate-800">200.000 đ</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center text-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+                        <i data-lucide="dumbbell" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted">Gym Membership</p>
+                        <p class="font-bold text-sm text-slate-800">Elite Fitness</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center text-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-600">
+                        <i data-lucide="activity" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted">Khám sức khỏe</p>
+                        <p class="font-bold text-sm text-slate-800">Đã hoàn thành</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Actions -->
+        <div class="flex gap-3 animate-fade-in delay-300">
+            <button
+                class="flex-1 py-3 bg-white border border-slate-200 text-slate-700 font-bold rounded-xl shadow-sm hover:bg-slate-50 flex items-center justify-center gap-2">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                Tìm phòng khám
+            </button>
+            <a href="claim_form.html"
+                class="flex-1 py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-blue-900 flex items-center justify-center gap-2">
+                <i data-lucide="file-plus" class="w-4 h-4"></i>
+                Gửi yêu cầu
+            </a>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

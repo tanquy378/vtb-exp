@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Thông báo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <button onclick="history.back()" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </button>
+        <h1 class="text-lg font-bold text-primary">Thông báo</h1>
+        <button class="ml-auto text-xs font-bold text-primary">Đọc tất cả</button>
+    </header>
+
+    <main class="pt-20 px-4 space-y-4">
+
+        <!-- Filter Tabs -->
+        <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2">
+            <button
+                class="px-4 py-1.5 bg-primary text-white rounded-full text-xs font-bold shadow-sm whitespace-nowrap">Tất
+                cả</button>
+            <button
+                class="px-4 py-1.5 bg-white text-slate-600 rounded-full text-xs font-bold shadow-sm border border-slate-100 whitespace-nowrap">Chưa
+                đọc</button>
+            <button
+                class="px-4 py-1.5 bg-white text-slate-600 rounded-full text-xs font-bold shadow-sm border border-slate-100 whitespace-nowrap">Công
+                việc</button>
+            <button
+                class="px-4 py-1.5 bg-white text-slate-600 rounded-full text-xs font-bold shadow-sm border border-slate-100 whitespace-nowrap">Tin
+                tức</button>
+        </div>
+
+        <!-- Notification List -->
+        <div class="space-y-2">
+
+            <!-- Today Section -->
+            <h3 class="text-xs font-bold text-slate-500 uppercase mt-2 mb-1">Hôm nay</h3>
+
+            <!-- Notif 1 (Unread, Approval) -->
+            <a href="manager_approvals.html"
+                class="block bg-blue-50 p-3 rounded-xl border border-blue-100 relative animate-fade-in">
+                <div class="absolute top-3 right-3 w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="flex gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-blue-600 shadow-sm shrink-0">
+                        <i data-lucide="file-check" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800">Yêu cầu nghỉ phép mới</h4>
+                        <p class="text-xs text-slate-600 line-clamp-2">Nguyễn Văn A đã gửi yêu cầu nghỉ phép 2 ngày
+                            (05/12 - 06/12).</p>
+                        <span class="text-[10px] text-slate-400 mt-1 block">15 phút trước</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Notif 2 (Unread, Social) -->
+            <a href="manager_communication.html"
+                class="block bg-white p-3 rounded-xl border border-slate-100 relative animate-fade-in delay-75">
+                <div class="absolute top-3 right-3 w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="flex gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 shrink-0">
+                        <i data-lucide="heart" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800">Bạn nhận được Kudos!</h4>
+                        <p class="text-xs text-slate-600 line-clamp-2">Trần Thị B đã gửi tặng bạn 50 điểm: "Cảm ơn sếp
+                            đã support dự án X!"</p>
+                        <span class="text-[10px] text-slate-400 mt-1 block">1 giờ trước</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Notif 3 (System) -->
+            <div class="block bg-white p-3 rounded-xl border border-slate-100 animate-fade-in delay-100">
+                <div class="flex gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 shrink-0">
+                        <i data-lucide="settings" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800">Bảo trì hệ thống</h4>
+                        <p class="text-xs text-slate-600 line-clamp-2">Hệ thống sẽ bảo trì từ 00:00 - 02:00 ngày 05/12.
+                            Vui lòng lưu lại công việc.</p>
+                        <span class="text-[10px] text-slate-400 mt-1 block">3 giờ trước</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yesterday Section -->
+            <h3 class="text-xs font-bold text-slate-500 uppercase mt-4 mb-1">Hôm qua</h3>
+
+            <!-- Notif 4 (News) -->
+            <a href="news_feed.html"
+                class="block bg-white p-3 rounded-xl border border-slate-100 animate-fade-in delay-150">
+                <div class="flex gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 shrink-0">
+                        <i data-lucide="newspaper" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800">Bản tin nội bộ tháng 11</h4>
+                        <p class="text-xs text-slate-600 line-clamp-2">Tổng kết hoạt động tháng 11 và vinh danh nhân
+                            viên xuất sắc.</p>
+                        <span class="text-[10px] text-slate-400 mt-1 block">Hôm qua, 09:00</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Notif 5 (Wellbeing) -->
+            <a href="manager_wellbeing_dashboard.html"
+                class="block bg-white p-3 rounded-xl border border-slate-100 animate-fade-in delay-200">
+                <div class="flex gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 shrink-0">
+                        <i data-lucide="footprints" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800">Thử thách đi bộ bắt đầu!</h4>
+                        <p class="text-xs text-slate-600 line-clamp-2">Thử thách "10.000 bước chân" đã chính thức bắt
+                            đầu. Tham gia ngay!</p>
+                        <span class="text-[10px] text-slate-400 mt-1 block">Hôm qua, 08:00</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

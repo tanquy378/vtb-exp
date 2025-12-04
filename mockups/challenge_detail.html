@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Chi tiết Thử thách</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="home.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Chi tiết Thử thách</h1>
+        <button class="ml-auto p-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="share-2" class="w-6 h-6 text-slate-600"></i>
+        </button>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Challenge Banner -->
+        <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-video">
+            <img src="https://images.unsplash.com/photo-1513593771513-7b58b6c4af38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover" alt="Running">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-5">
+                <span class="px-2 py-1 bg-secondary text-white text-[10px] font-bold rounded-md w-fit mb-2">Đang diễn
+                    ra</span>
+                <h2 class="text-white font-bold text-xl leading-tight">Đi bộ nhân dịp kỷ niệm 25 ITD</h2>
+                <p class="text-slate-200 text-xs mt-1 flex items-center gap-1">
+                    <i data-lucide="calendar" class="w-3 h-3"></i> 01/10 - 31/10/2025
+                </p>
+            </div>
+        </div>
+
+        <!-- My Progress -->
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 animate-fade-in">
+            <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <i data-lucide="activity" class="w-5 h-5 text-orange-500"></i> Thành tích của tôi
+            </h3>
+            <div class="flex items-center justify-between mb-2">
+                <div>
+                    <p class="text-3xl font-bold text-primary">4,521</p>
+                    <p class="text-xs text-muted">Bước chân hôm nay</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm font-bold text-green-600">Hạng 142</p>
+                    <p class="text-xs text-muted">Top 15%</p>
+                </div>
+            </div>
+            <div class="w-full h-3 bg-slate-100 rounded-full mb-2 overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-orange-400 to-red-500 w-[45%] rounded-full"></div>
+            </div>
+            <p class="text-xs text-slate-500 text-center">Mục tiêu: 10,000 bước / ngày</p>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 animate-fade-in delay-100">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold text-slate-800 flex items-center gap-2">
+                    <i data-lucide="trophy" class="w-5 h-5 text-yellow-500"></i> Bảng xếp hạng
+                </h3>
+                <select class="text-xs bg-slate-50 border-none rounded-lg py-1 px-2 font-medium text-slate-600">
+                    <option>Hôm nay</option>
+                    <option>Tuần này</option>
+                    <option>Tháng này</option>
+                </select>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Rank 1 -->
+                <div class="flex items-center gap-3">
+                    <div class="w-6 text-center font-bold text-yellow-500 text-lg">1</div>
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                        class="w-10 h-10 rounded-full border-2 border-yellow-400" alt="User">
+                    <div class="flex-1">
+                        <p class="font-bold text-sm text-slate-800">Trần Văn A</p>
+                        <p class="text-[10px] text-muted">IT Division</p>
+                    </div>
+                    <p class="font-bold text-primary">15,230</p>
+                </div>
+
+                <!-- Rank 2 -->
+                <div class="flex items-center gap-3">
+                    <div class="w-6 text-center font-bold text-slate-400 text-lg">2</div>
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                        class="w-10 h-10 rounded-full border-2 border-slate-300" alt="User">
+                    <div class="flex-1">
+                        <p class="font-bold text-sm text-slate-800">Nguyễn Thị B</p>
+                        <p class="text-[10px] text-muted">HR Department</p>
+                    </div>
+                    <p class="font-bold text-primary">14,890</p>
+                </div>
+
+                <!-- Rank 3 -->
+                <div class="flex items-center gap-3">
+                    <div class="w-6 text-center font-bold text-orange-700 text-lg">3</div>
+                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                        class="w-10 h-10 rounded-full border-2 border-orange-600" alt="User">
+                    <div class="flex-1">
+                        <p class="font-bold text-sm text-slate-800">Lê Văn C</p>
+                        <p class="text-[10px] text-muted">Finance</p>
+                    </div>
+                    <p class="font-bold text-primary">14,100</p>
+                </div>
+
+                <!-- Divider -->
+                <div class="h-px bg-slate-100 my-2"></div>
+
+                <!-- My Rank -->
+                <div class="flex items-center gap-3 bg-blue-50 p-2 rounded-xl -mx-2">
+                    <div class="w-6 text-center font-bold text-slate-500 text-sm">142</div>
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xs">
+                        NB</div>
+                    <div class="flex-1">
+                        <p class="font-bold text-sm text-slate-800">Bạn</p>
+                        <p class="text-[10px] text-muted">Digital Banking</p>
+                    </div>
+                    <p class="font-bold text-primary">4,521</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rules -->
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 animate-fade-in delay-200">
+            <h3 class="font-bold text-slate-800 mb-3">Thể lệ</h3>
+            <ul class="space-y-2 text-sm text-slate-600 list-disc pl-4">
+                <li>Mỗi 1,000 bước = 10 điểm thưởng.</li>
+                <li>Top 3 mỗi tuần nhận huy hiệu "Vận động viên".</li>
+                <li>Hoàn thành 10,000 bước liên tục 7 ngày nhận quà đặc biệt.</li>
+                <li>Sử dụng Apple Health hoặc Google Fit để đồng bộ dữ liệu.</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

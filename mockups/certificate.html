@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Chứng chỉ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body class="bg-slate-900 text-white pb-24 select-none h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 py-3 flex items-center gap-4">
+        <a href="learning.html" class="p-2 -ml-2 rounded-full hover:bg-white/10">
+            <i data-lucide="x" class="w-6 h-6 text-white"></i>
+        </a>
+        <h1 class="text-lg font-bold text-white">Chúc mừng!</h1>
+    </header>
+
+    <main class="flex-1 flex flex-col items-center justify-center p-4 space-y-6">
+
+        <div class="text-center space-y-2 animate-fade-in">
+            <div
+                class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_30px_rgba(245,158,11,0.5)]">
+                <i data-lucide="award" class="w-10 h-10 text-white"></i>
+            </div>
+            <h2 class="text-2xl font-bold">Bạn đã hoàn thành!</h2>
+            <p class="text-slate-300 text-sm">Bạn đã xuất sắc hoàn thành khóa học<br>"Kỹ năng Tư vấn Tài chính Chuyên
+                sâu"</p>
+        </div>
+
+        <!-- Certificate Card -->
+        <div
+            class="w-full bg-white text-slate-900 rounded-xl p-6 shadow-2xl relative overflow-hidden animate-fade-in delay-100 transform hover:scale-105 transition-transform duration-500">
+            <!-- Decorative Background -->
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-secondary"></div>
+            <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 rounded-full"></div>
+
+            <div class="text-center space-y-4 relative z-10">
+                <div class="flex justify-center mb-2">
+                    <i data-lucide="graduation-cap" class="w-12 h-12 text-primary"></i>
+                </div>
+
+                <div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Chứng nhận hoàn thành</p>
+                    <h3 class="text-xl font-bold text-primary mt-1">Nguyễn Văn Banker</h3>
+                </div>
+
+                <div class="w-16 h-px bg-slate-200 mx-auto"></div>
+
+                <div>
+                    <p class="text-xs text-slate-500">Đã hoàn thành khóa học</p>
+                    <h4 class="text-lg font-bold text-slate-800">Kỹ năng Tư vấn Tài chính Chuyên sâu</h4>
+                </div>
+
+                <div class="flex justify-between items-end pt-4">
+                    <div class="text-left">
+                        <p class="text-[10px] text-slate-400">Ngày cấp</p>
+                        <p class="text-xs font-bold">04/12/2025</p>
+                    </div>
+                    <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center">
+                        <i data-lucide="qr-code" class="w-8 h-8 text-slate-800"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="w-full space-y-3 animate-fade-in delay-200">
+            <button
+                class="w-full py-3.5 bg-secondary text-white font-bold rounded-xl shadow-lg hover:bg-yellow-600 transition-all active:scale-95 flex items-center justify-center gap-2">
+                <i data-lucide="download" class="w-5 h-5"></i>
+                Tải chứng chỉ (PDF)
+            </button>
+            <button
+                class="w-full py-3.5 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 transition-all active:scale-95 flex items-center justify-center gap-2 backdrop-blur-sm">
+                <i data-lucide="share-2" class="w-5 h-5"></i>
+                Chia sẻ lên LinkedIn
+            </button>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // Confetti Effect
+        window.onload = function () {
+            var duration = 3 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            var interval = setInterval(function () {
+                var timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                var particleCount = 50 * (timeLeft / duration);
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
+        };
+    </script>
+</body>
+
+</html>

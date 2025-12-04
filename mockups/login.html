@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Đăng nhập</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body
+    class="bg-background text-text h-screen flex flex-col items-center justify-center p-6 select-none relative overflow-hidden">
+
+    <!-- Background Decoration -->
+    <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary to-blue-900 rounded-b-[3rem] z-0">
+    </div>
+    <div class="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+    <div class="absolute top-20 left-10 w-20 h-20 bg-secondary/20 rounded-full blur-xl"></div>
+
+    <!-- Logo & Title -->
+    <div class="relative z-10 flex flex-col items-center mb-10 text-white">
+        <div class="w-20 h-20 bg-white rounded-2xl shadow-xl flex items-center justify-center mb-4">
+            <i data-lucide="layers" class="w-10 h-10 text-primary"></i>
+        </div>
+        <h1 class="text-2xl font-bold tracking-wide">EX Super App</h1>
+        <p class="text-blue-100 text-sm">Employee Experience Platform</p>
+    </div>
+
+    <!-- Login Form -->
+    <div class="relative z-10 w-full max-w-sm bg-white rounded-3xl shadow-xl p-8 animate-fade-in">
+        <h2 class="text-xl font-bold text-primary mb-6 text-center">Đăng nhập</h2>
+
+        <form onsubmit="handleLogin(event)" class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Tên đăng nhập</label>
+                <div class="relative">
+                    <i data-lucide="user" class="absolute left-3 top-3 w-5 h-5 text-slate-400"></i>
+                    <input type="text" id="username"
+                        class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                        placeholder="Nhập mã nhân viên" value="demo_boss1">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Mật khẩu</label>
+                <div class="relative">
+                    <i data-lucide="lock" class="absolute left-3 top-3 w-5 h-5 text-slate-400"></i>
+                    <input type="password" id="password"
+                        class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                        placeholder="••••••••" value="password">
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between text-xs">
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
+                    <span class="text-slate-600">Ghi nhớ</span>
+                </label>
+                <a href="#" class="text-primary font-bold hover:underline">Quên mật khẩu?</a>
+            </div>
+
+            <button type="submit"
+                class="w-full py-3.5 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-blue-900 transition-all active:scale-95 flex items-center justify-center gap-2">
+                <span>Đăng nhập</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+        </form>
+
+        <div class="mt-6 flex items-center gap-4">
+            <div class="h-px flex-1 bg-slate-200"></div>
+            <span class="text-xs text-slate-400">Hoặc đăng nhập bằng</span>
+            <div class="h-px flex-1 bg-slate-200"></div>
+        </div>
+
+        <div class="mt-6 flex justify-center gap-4">
+            <button
+                class="w-12 h-12 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center hover:bg-slate-100 transition-colors"
+                title="FaceID">
+                <i data-lucide="scan-face" class="w-6 h-6 text-slate-600"></i>
+            </button>
+            <button
+                class="w-12 h-12 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center hover:bg-slate-100 transition-colors"
+                title="Fingerprint">
+                <i data-lucide="fingerprint" class="w-6 h-6 text-slate-600"></i>
+            </button>
+        </div>
+    </div>
+
+    <p class="absolute bottom-6 text-xs text-slate-400">© 2025 Big 4 Bank. All rights reserved.</p>
+
+    <script>
+        lucide.createIcons();
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const btn = e.target.querySelector('button[type="submit"]');
+
+            // Loading state
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i>';
+            lucide.createIcons();
+
+            setTimeout(() => {
+                localStorage.setItem('username', username);
+                if (username === 'demo_boss1') {
+                    window.location.href = 'manager_home.html';
+                } else {
+                    window.location.href = 'home.html';
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

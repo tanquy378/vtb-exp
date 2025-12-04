@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Đặt phòng họp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="home.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Đặt phòng họp</h1>
+        <button class="ml-auto text-sm font-semibold text-primary">Lịch của tôi</button>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Search Filters -->
+        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 animate-fade-in">
+            <h2 class="text-sm font-bold text-slate-700 mb-3">Tìm kiếm phòng trống</h2>
+
+            <div class="space-y-3">
+                <!-- Date & Time -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                            <i data-lucide="calendar" class="w-4 h-4 text-slate-400"></i>
+                        </div>
+                        <input type="date"
+                            class="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-primary"
+                            value="2025-12-05">
+                    </div>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                            <i data-lucide="clock" class="w-4 h-4 text-slate-400"></i>
+                        </div>
+                        <select
+                            class="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm appearance-none focus:outline-none focus:border-primary">
+                            <option>09:00</option>
+                            <option>10:00</option>
+                            <option>11:00</option>
+                            <option>14:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Duration & Capacity -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="relative">
+                        <select
+                            class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg text-sm appearance-none focus:outline-none focus:border-primary">
+                            <option>1 giờ</option>
+                            <option>30 phút</option>
+                            <option>2 giờ</option>
+                            <option>4 giờ</option>
+                        </select>
+                        <i data-lucide="chevron-down"
+                            class="absolute right-2 top-2.5 w-4 h-4 text-slate-400 pointer-events-none"></i>
+                    </div>
+                    <div class="relative">
+                        <select
+                            class="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg text-sm appearance-none focus:outline-none focus:border-primary">
+                            <option>6-10 người</option>
+                            <option>1-5 người</option>
+                            <option>11-20 người</option>
+                            <option>20+ người</option>
+                        </select>
+                        <i data-lucide="chevron-down"
+                            class="absolute right-2 top-2.5 w-4 h-4 text-slate-400 pointer-events-none"></i>
+                    </div>
+                </div>
+
+                <!-- Equipment Tags -->
+                <div class="flex flex-wrap gap-2">
+                    <label
+                        class="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-xs font-medium border border-blue-100 cursor-pointer">
+                        <input type="checkbox" class="hidden" checked>
+                        <i data-lucide="check" class="w-3 h-3"></i>
+                        Projector
+                    </label>
+                    <label
+                        class="flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 text-slate-600 rounded-full text-xs font-medium border border-slate-200 cursor-pointer hover:bg-slate-100">
+                        <input type="checkbox" class="hidden">
+                        Video Conf
+                    </label>
+                    <label
+                        class="flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 text-slate-600 rounded-full text-xs font-medium border border-slate-200 cursor-pointer hover:bg-slate-100">
+                        <input type="checkbox" class="hidden">
+                        Whiteboard
+                    </label>
+                </div>
+
+                <button
+                    class="w-full py-2.5 bg-primary text-white font-bold rounded-xl shadow-md hover:bg-blue-900 transition-colors active:scale-95">
+                    Tìm phòng
+                </button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="space-y-4 animate-fade-in delay-100">
+            <h3 class="text-sm font-semibold text-muted">Kết quả (3 phòng trống)</h3>
+
+            <!-- Room Card 1 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 group">
+                <div class="h-32 bg-slate-200 relative">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        class="w-full h-full object-cover" alt="Meeting Room">
+                    <div
+                        class="absolute top-2 right-2 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-sm">
+                        Available
+                    </div>
+                    <div
+                        class="absolute bottom-2 left-2 bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-md flex items-center gap-1">
+                        <i data-lucide="users" class="w-3 h-3"></i> 10
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-bold text-primary">Phòng Innovation Lab</h4>
+                            <p class="text-xs text-muted">Tầng 12, Tòa nhà Hội sở</p>
+                        </div>
+                        <div class="flex gap-1">
+                            <i data-lucide="projector" class="w-4 h-4 text-slate-400" title="Projector"></i>
+                            <i data-lucide="wifi" class="w-4 h-4 text-slate-400" title="Wifi"></i>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full py-2 bg-slate-50 text-primary font-semibold rounded-lg border border-slate-200 hover:bg-primary hover:text-white transition-colors">
+                        Đặt ngay
+                    </button>
+                </div>
+            </div>
+
+            <!-- Room Card 2 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 group">
+                <div class="h-32 bg-slate-200 relative">
+                    <img src="https://images.unsplash.com/photo-1577412647305-991150c7d163?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        class="w-full h-full object-cover" alt="Meeting Room">
+                    <div
+                        class="absolute top-2 right-2 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-sm">
+                        Available
+                    </div>
+                    <div
+                        class="absolute bottom-2 left-2 bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-md flex items-center gap-1">
+                        <i data-lucide="users" class="w-3 h-3"></i> 6
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-bold text-primary">Phòng Agile 01</h4>
+                            <p class="text-xs text-muted">Tầng 12, Tòa nhà Hội sở</p>
+                        </div>
+                        <div class="flex gap-1">
+                            <i data-lucide="monitor" class="w-4 h-4 text-slate-400" title="TV"></i>
+                            <i data-lucide="wifi" class="w-4 h-4 text-slate-400" title="Wifi"></i>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full py-2 bg-slate-50 text-primary font-semibold rounded-lg border border-slate-200 hover:bg-primary hover:text-white transition-colors">
+                        Đặt ngay
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

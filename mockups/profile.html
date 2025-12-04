@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="home.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Hồ sơ cá nhân</h1>
+        <a href="edit_profile.html" class="ml-auto text-sm font-semibold text-secondary">Sửa</a>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Profile Header -->
+        <div class="flex flex-col items-center animate-fade-in">
+            <div
+                class="w-24 h-24 rounded-full bg-primary flex items-center justify-center text-white text-3xl font-bold shadow-lg mb-3 border-4 border-white">
+                NB
+            </div>
+            <h2 class="text-xl font-bold text-primary">Nguyễn Văn Banker</h2>
+            <p class="text-muted text-sm">Chuyên viên Khách hàng Cá nhân</p>
+            <span class="mt-2 px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">ID:
+                12345678</span>
+        </div>
+
+        <!-- Info Sections -->
+        <div class="space-y-4 animate-fade-in delay-100">
+
+            <!-- Work Info -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <div class="px-4 py-3 bg-slate-50 border-b border-slate-100 font-semibold text-sm text-slate-700">
+                    Thông tin công việc
+                </div>
+                <div class="p-4 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-muted">Phòng ban</span>
+                        <span class="text-sm font-medium text-right">Khối Bán lẻ - Chi nhánh Hà Nội</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-muted">Quản lý trực tiếp</span>
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm font-medium text-primary">Trần Thị Sếp</span>
+                            <i data-lucide="info" class="w-4 h-4 text-slate-400"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-muted">Ngày vào làm</span>
+                        <span class="text-sm font-medium">01/01/2020</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-muted">Thâm niên</span>
+                        <span class="text-sm font-medium">5 năm 3 tháng</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <div
+                    class="px-4 py-3 bg-slate-50 border-b border-slate-100 font-semibold text-sm text-slate-700 flex justify-between items-center">
+                    <span>Thông tin liên hệ</span>
+                    <i data-lucide="lock" class="w-4 h-4 text-slate-400"></i>
+                </div>
+                <div class="p-4 space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="text-sm text-muted">Email công việc</span>
+                        <span class="text-sm font-medium text-right break-all">nguyenvanbanker@big4bank.com.vn</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-muted">Di động</span>
+                        <span class="text-sm font-medium">0909 123 456</span>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <span class="text-sm text-muted">Địa chỉ hiện tại</span>
+                        <span class="text-sm font-medium text-right max-w-[60%]">Số 1, Phố Wall, Hoàn Kiếm, Hà
+                            Nội</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Goals Section -->
+        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 animate-fade-in delay-100">
+            <h2 class="text-sm font-bold text-slate-800 mb-3">Phát triển & Hiệu suất</h2>
+            <div class="space-y-2">
+                <a href="goals.html"
+                    class="flex items-center justify-between p-3 bg-slate-50 rounded-xl hover:bg-blue-50 transition-colors group">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-blue-600 shadow-sm">
+                            <i data-lucide="target" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700 group-hover:text-blue-700">Mục tiêu
+                            (KPIs/OKRs)</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 group-hover:text-blue-500"></i>
+                </a>
+                <a href="career_path.html"
+                    class="flex items-center justify-between p-3 bg-slate-50 rounded-xl hover:bg-blue-50 transition-colors group">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-purple-600 shadow-sm">
+                            <i data-lucide="trending-up" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700 group-hover:text-purple-700">Lộ trình nghề
+                            nghiệp</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 group-hover:text-purple-500"></i>
+                </a>
+                <a href="performance_review.html"
+                    class="flex items-center justify-between p-3 bg-slate-50 rounded-xl hover:bg-blue-50 transition-colors group">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-green-600 shadow-sm">
+                            <i data-lucide="clipboard-check" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700 group-hover:text-green-700">Đánh giá hiệu
+                            suất</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 group-hover:text-green-500"></i>
+                </a>
+            </div>
+        </div>
+
+        </div>
+
+        <a href="login.html"
+            class="block w-full py-3 text-center text-red-600 font-medium bg-red-50 rounded-xl hover:bg-red-100 transition-colors animate-fade-in delay-200">
+            Đăng xuất
+        </a>
+
+    </main>
+
+    <!-- Bottom Nav (Same as Home) -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 pb-safe pt-2 px-6 flex justify-between items-center z-50">
+        <a href="home.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="home" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="learning.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Học tập</span>
+        </a>
+        <div class="relative -top-6">
+            <a href="create_task.html"
+                class="w-14 h-14 rounded-full bg-secondary text-white shadow-lg flex items-center justify-center transform hover:scale-105 transition-transform">
+                <i data-lucide="plus" class="w-8 h-8"></i>
+            </a>
+        </div>
+        <a href="wellbeing.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="heart" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Sức khỏe</span>
+        </a>
+        <a href="profile.html" class="flex flex-col items-center gap-1 text-primary">
+            <i data-lucide="user" class="w-6 h-6 fill-current"></i>
+            <span class="text-[10px] font-medium">Cá nhân</span>
+        </a>
+    </nav>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Tạo Thông báo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="manager_communication.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="x" class="w-6 h-6 text-slate-600"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Tạo Thông báo</h1>
+        <button onclick="handlePost()" class="ml-auto text-sm font-bold text-primary">Đăng</button>
+    </header>
+
+    <main class="pt-20 px-4 space-y-4">
+
+        <!-- Target Audience -->
+        <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+                <i data-lucide="users" class="w-5 h-5 text-slate-500"></i>
+            </div>
+            <div class="flex-1">
+                <p class="text-xs text-slate-500">Gửi đến</p>
+                <p class="text-sm font-bold text-primary">Team Marketing (20 thành viên)</p>
+            </div>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
+        </div>
+
+        <!-- Content Input -->
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 min-h-[300px]">
+            <input type="text" class="w-full text-lg font-bold placeholder-slate-400 mb-3 focus:outline-none"
+                placeholder="Tiêu đề thông báo">
+            <textarea class="w-full h-48 text-sm text-slate-700 placeholder-slate-400 focus:outline-none resize-none"
+                placeholder="Nội dung thông báo..."></textarea>
+
+            <!-- Attachments -->
+            <div class="flex gap-2 mt-4 overflow-x-auto pb-2">
+                <button
+                    class="w-16 h-16 rounded-lg border-2 border-dashed border-slate-300 flex flex-col items-center justify-center text-slate-400 shrink-0">
+                    <i data-lucide="image-plus" class="w-5 h-5 mb-1"></i>
+                    <span class="text-[10px]">Ảnh</span>
+                </button>
+                <button
+                    class="w-16 h-16 rounded-lg border-2 border-dashed border-slate-300 flex flex-col items-center justify-center text-slate-400 shrink-0">
+                    <i data-lucide="paperclip" class="w-5 h-5 mb-1"></i>
+                    <span class="text-[10px]">File</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Options -->
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 space-y-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="bell" class="w-5 h-5 text-slate-500"></i>
+                    <span class="text-sm font-medium text-slate-700">Gửi thông báo đẩy (Push)</span>
+                </div>
+                <input type="checkbox" class="w-5 h-5 rounded text-primary focus:ring-primary" checked>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="pin" class="w-5 h-5 text-slate-500"></i>
+                    <span class="text-sm font-medium text-slate-700">Ghim lên đầu bảng tin</span>
+                </div>
+                <input type="checkbox" class="w-5 h-5 rounded text-primary focus:ring-primary">
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Success Overlay -->
+    <div id="success-overlay"
+        class="fixed inset-0 bg-white/90 backdrop-blur-sm z-[60] flex flex-col items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mb-4 animate-bounce">
+            <i data-lucide="send" class="w-10 h-10 text-indigo-600"></i>
+        </div>
+        <h2 class="text-xl font-bold text-slate-800">Đã đăng thông báo!</h2>
+        <p class="text-slate-500 mt-2">Team của bạn sẽ nhận được ngay.</p>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        function handlePost() {
+            const overlay = document.getElementById('success-overlay');
+
+            // Show success
+            overlay.classList.remove('hidden');
+            setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+
+            // Redirect
+            setTimeout(() => {
+                window.location.href = 'manager_communication.html';
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>

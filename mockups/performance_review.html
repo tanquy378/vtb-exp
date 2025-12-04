@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Đánh giá Hiệu suất</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="profile.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Đánh giá Hiệu suất</h1>
+        <button class="ml-auto p-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="history" class="w-6 h-6 text-slate-600"></i>
+        </button>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Active Review Banner -->
+        <div
+            class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-5 text-white shadow-lg animate-fade-in relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <i data-lucide="clipboard-check" class="w-32 h-32"></i>
+            </div>
+            <div class="relative z-10">
+                <span class="px-2 py-1 bg-white/20 text-white text-[10px] font-bold rounded-md mb-2 inline-block">Đang
+                    diễn ra</span>
+                <h2 class="text-xl font-bold mb-1">Kỳ đánh giá Cuối năm 2025</h2>
+                <p class="text-xs opacity-90 mb-4">Hạn hoàn thành: 31/12/2025</p>
+
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="flex-1">
+                        <div class="flex justify-between text-xs mb-1 opacity-90">
+                            <span>Tiến độ</span>
+                            <span class="font-bold">30%</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-black/20 rounded-full overflow-hidden">
+                            <div class="h-full bg-secondary w-[30%]"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="self_review.html"
+                    class="block w-full py-2.5 bg-white text-primary font-bold text-center rounded-xl shadow-sm hover:bg-blue-50 transition-colors text-sm">
+                    Tiếp tục đánh giá
+                </a>
+            </div>
+        </div>
+
+        <!-- Review Steps -->
+        <div class="space-y-4 animate-fade-in delay-100">
+            <h2 class="text-lg font-bold text-primary">Quy trình đánh giá</h2>
+
+            <div class="relative pl-4 border-l-2 border-slate-200 space-y-6">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div
+                        class="absolute -left-[21px] top-0 w-4 h-4 rounded-full bg-green-500 border-2 border-white shadow-sm">
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-sm">Tự đánh giá</h3>
+                    <p class="text-xs text-green-600 font-medium mt-0.5">Đang thực hiện</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="absolute -left-[21px] top-0 w-4 h-4 rounded-full bg-slate-200 border-2 border-white">
+                    </div>
+                    <h3 class="font-bold text-slate-400 text-sm">Quản lý đánh giá</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Chờ hoàn thành tự đánh giá</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="absolute -left-[21px] top-0 w-4 h-4 rounded-full bg-slate-200 border-2 border-white">
+                    </div>
+                    <h3 class="font-bold text-slate-400 text-sm">Thống nhất kết quả</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Chưa bắt đầu</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Past Reviews -->
+        <div class="space-y-4 animate-fade-in delay-200">
+            <h2 class="text-lg font-bold text-primary">Lịch sử đánh giá</h2>
+
+            <!-- Review Item -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center justify-between">
+                <div>
+                    <h3 class="font-bold text-slate-800 text-sm">Kỳ 6 tháng đầu năm 2025</h3>
+                    <p class="text-xs text-muted mt-1">Hoàn thành: 15/07/2025</p>
+                </div>
+                <div class="text-right">
+                    <span class="block text-lg font-bold text-green-600">A</span>
+                    <span class="text-[10px] text-slate-500">Xuất sắc</span>
+                </div>
+            </div>
+
+            <!-- Review Item -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center justify-between">
+                <div>
+                    <h3 class="font-bold text-slate-800 text-sm">Kỳ cuối năm 2024</h3>
+                    <p class="text-xs text-muted mt-1">Hoàn thành: 10/01/2025</p>
+                </div>
+                <div class="text-right">
+                    <span class="block text-lg font-bold text-blue-600">B+</span>
+                    <span class="text-[10px] text-slate-500">Giỏi</span>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

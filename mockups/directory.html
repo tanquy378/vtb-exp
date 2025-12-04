@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Danh bạ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="home.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <div class="flex-1 relative">
+            <i data-lucide="search" class="absolute left-3 top-2.5 w-4 h-4 text-slate-400"></i>
+            <input type="text" placeholder="Tìm đồng nghiệp..."
+                class="w-full pl-9 pr-4 py-2 bg-slate-100 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all">
+        </div>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Departments -->
+        <div class="animate-fade-in">
+            <h2 class="text-sm font-bold text-muted mb-3 uppercase tracking-wider">Phòng ban</h2>
+            <div class="grid grid-cols-2 gap-3">
+                <div
+                    class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3 active:scale-95 transition-transform">
+                    <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-700">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-sm font-semibold">Khối Kinh doanh</span>
+                </div>
+                <div
+                    class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3 active:scale-95 transition-transform">
+                    <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center text-green-700">
+                        <i data-lucide="code" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-sm font-semibold">Khối Công nghệ</span>
+                </div>
+                <div
+                    class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3 active:scale-95 transition-transform">
+                    <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center text-orange-700">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-sm font-semibold">Khối Nhân sự</span>
+                </div>
+                <div
+                    class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3 active:scale-95 transition-transform">
+                    <div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center text-purple-700">
+                        <i data-lucide="pie-chart" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-sm font-semibold">Khối Tài chính</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Contacts -->
+        <div class="animate-fade-in delay-100">
+            <h2 class="text-sm font-bold text-muted mb-3 uppercase tracking-wider">Gần đây</h2>
+            <div class="space-y-3">
+
+                <!-- Person 1 -->
+                <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
+                    <div class="relative">
+                        <img src="https://i.pravatar.cc/150?u=5" class="w-12 h-12 rounded-full object-cover" alt="User">
+                        <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-slate-800">Lê Văn Giám Đốc</h3>
+                        <p class="text-xs text-muted">Giám đốc Khối CNTT</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="p-2 rounded-full bg-slate-50 text-primary hover:bg-blue-50">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                        </button>
+                        <button class="p-2 rounded-full bg-slate-50 text-primary hover:bg-blue-50">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Person 2 -->
+                <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
+                    <div class="relative">
+                        <img src="https://i.pravatar.cc/150?u=8" class="w-12 h-12 rounded-full object-cover" alt="User">
+                        <div class="absolute bottom-0 right-0 w-3 h-3 bg-slate-300 border-2 border-white rounded-full">
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-slate-800">Phạm Thị HR</h3>
+                        <p class="text-xs text-muted">Trưởng phòng Tuyển dụng</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="p-2 rounded-full bg-slate-50 text-primary hover:bg-blue-50">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                        </button>
+                        <button class="p-2 rounded-full bg-slate-50 text-primary hover:bg-blue-50">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

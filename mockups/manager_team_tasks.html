@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Quản lý Công việc Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="manager_home.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Quản lý Công việc Team</h1>
+        <div class="ml-auto flex gap-2">
+            <button class="p-2 rounded-full hover:bg-slate-100">
+                <i data-lucide="search" class="w-6 h-6 text-slate-600"></i>
+            </button>
+            <button class="p-2 rounded-full hover:bg-slate-100">
+                <i data-lucide="filter" class="w-6 h-6 text-slate-600"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Workload Chart -->
+        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 animate-fade-in">
+            <h2 class="text-sm font-bold text-slate-800 mb-3">Phân bổ công việc</h2>
+            <canvas id="workloadChart" height="150"></canvas>
+        </div>
+
+        <!-- Team Status -->
+        <div class="flex gap-3 overflow-x-auto hide-scrollbar pb-2">
+            <div class="min-w-[140px] bg-blue-50 p-3 rounded-xl border border-blue-100">
+                <p class="text-xs text-blue-600 font-bold mb-1">Đang thực hiện</p>
+                <p class="text-2xl font-bold text-blue-900">18</p>
+            </div>
+            <div class="min-w-[140px] bg-green-50 p-3 rounded-xl border border-green-100">
+                <p class="text-xs text-green-600 font-bold mb-1">Hoàn thành tuần này</p>
+                <p class="text-2xl font-bold text-green-900">24</p>
+            </div>
+            <div class="min-w-[140px] bg-red-50 p-3 rounded-xl border border-red-100">
+                <p class="text-xs text-red-600 font-bold mb-1">Quá hạn</p>
+                <p class="text-2xl font-bold text-red-900">3</p>
+            </div>
+        </div>
+
+        <!-- Task List -->
+        <div class="space-y-4 animate-fade-in delay-100">
+            <h2 class="text-lg font-bold text-primary">Danh sách công việc</h2>
+
+            <!-- Task Item -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-slate-800 line-clamp-1">Chuẩn bị báo cáo Q3</h3>
+                    <span class="px-2 py-1 bg-red-50 text-red-600 text-[10px] font-bold rounded-md">High</span>
+                </div>
+                <p class="text-xs text-slate-500 mb-3">Hạn: 15/10/2025 • Project Alpha</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            class="w-6 h-6 rounded-full border border-white shadow-sm" alt="User">
+                        <span class="text-xs font-medium text-slate-700">Trần Văn A</span>
+                    </div>
+                    <span class="text-xs text-blue-600 font-medium bg-blue-50 px-2 py-1 rounded-lg">In Progress</span>
+                </div>
+            </div>
+
+            <!-- Task Item -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-slate-800 line-clamp-1">Thiết kế Banner Campaign</h3>
+                    <span class="px-2 py-1 bg-orange-50 text-orange-600 text-[10px] font-bold rounded-md">Medium</span>
+                </div>
+                <p class="text-xs text-slate-500 mb-3">Hạn: 18/10/2025 • Marketing</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            class="w-6 h-6 rounded-full border border-white shadow-sm" alt="User">
+                        <span class="text-xs font-medium text-slate-700">Nguyễn Thị B</span>
+                    </div>
+                    <span class="text-xs text-slate-500 font-medium bg-slate-100 px-2 py-1 rounded-lg">Not
+                        Started</span>
+                </div>
+            </div>
+
+            <!-- Task Item (Overdue) -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-red-500">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-slate-800 line-clamp-1">Cập nhật dữ liệu khách hàng</h3>
+                    <span class="px-2 py-1 bg-red-50 text-red-600 text-[10px] font-bold rounded-md">Urgent</span>
+                </div>
+                <p class="text-xs text-red-500 font-medium mb-3">Quá hạn: 2 ngày</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            class="w-6 h-6 rounded-full border border-white shadow-sm" alt="User">
+                        <span class="text-xs font-medium text-slate-700">Lê Văn C</span>
+                    </div>
+                    <button
+                        class="text-xs text-white font-bold bg-red-500 px-3 py-1 rounded-lg shadow-sm hover:bg-red-600">Nhắc
+                        nhở</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation (Manager) -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 pb-safe pt-2 px-6 flex justify-between items-center z-50">
+        <a href="manager_home.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Dash</span>
+        </a>
+        <a href="manager_approvals.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <div class="relative">
+                <i data-lucide="check-square" class="w-6 h-6"></i>
+                <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+            </div>
+            <span class="text-[10px] font-medium">Duyệt</span>
+        </a>
+        <div class="relative -top-6">
+            <a href="manager_assign_task.html"
+                class="w-14 h-14 rounded-full bg-primary text-white shadow-lg flex items-center justify-center transform hover:scale-105 transition-transform">
+                <i data-lucide="plus" class="w-7 h-7"></i>
+            </a>
+        </div>
+        <a href="manager_team_list.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="users" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Team</span>
+        </a>
+        <a href="profile.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="user" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Cá nhân</span>
+        </a>
+    </nav>
+
+    <script>
+        lucide.createIcons();
+
+        // Workload Chart
+        const ctx = document.getElementById('workloadChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Trần A', 'Nguyễn B', 'Lê C', 'Phạm D'],
+                datasets: [{
+                    label: 'Tasks',
+                    data: [5, 3, 8, 2],
+                    backgroundColor: [
+                        '#3B82F6',
+                        '#3B82F6',
+                        '#EF4444', // High workload
+                        '#3B82F6'
+                    ],
+                    borderRadius: 4,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { display: false } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

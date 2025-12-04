@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Lịch biểu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <button onclick="history.back()" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </button>
+        <h1 class="text-lg font-bold text-primary">Lịch biểu</h1>
+        <div class="ml-auto flex gap-2">
+            <button class="p-2 rounded-full hover:bg-slate-100">
+                <i data-lucide="plus" class="w-6 h-6 text-slate-600"></i>
+            </button>
+            <button class="p-2 rounded-full hover:bg-slate-100">
+                <i data-lucide="more-vertical" class="w-6 h-6 text-slate-600"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Calendar Widget (Simplified) -->
+        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 animate-fade-in">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="font-bold text-slate-800">Tháng 10, 2025</h2>
+                <div class="flex gap-2">
+                    <button class="p-1 hover:bg-slate-100 rounded-full"><i data-lucide="chevron-left"
+                            class="w-5 h-5"></i></button>
+                    <button class="p-1 hover:bg-slate-100 rounded-full"><i data-lucide="chevron-right"
+                            class="w-5 h-5"></i></button>
+                </div>
+            </div>
+
+            <!-- Days of Week -->
+            <div class="grid grid-cols-7 text-center mb-2">
+                <span class="text-xs font-bold text-slate-400">T2</span>
+                <span class="text-xs font-bold text-slate-400">T3</span>
+                <span class="text-xs font-bold text-slate-400">T4</span>
+                <span class="text-xs font-bold text-slate-400">T5</span>
+                <span class="text-xs font-bold text-slate-400">T6</span>
+                <span class="text-xs font-bold text-slate-400">T7</span>
+                <span class="text-xs font-bold text-slate-400">CN</span>
+            </div>
+
+            <!-- Days -->
+            <div class="grid grid-cols-7 text-center gap-y-2">
+                <!-- Previous Month -->
+                <span class="text-sm text-slate-300 py-2">29</span>
+                <span class="text-sm text-slate-300 py-2">30</span>
+
+                <!-- Current Month -->
+                <span class="text-sm text-slate-700 py-2">1</span>
+                <span class="text-sm text-slate-700 py-2">2</span>
+                <span class="text-sm text-slate-700 py-2">3</span>
+                <span class="text-sm text-slate-700 py-2">4</span>
+                <span class="text-sm text-slate-700 py-2">5</span>
+
+                <span class="text-sm text-slate-700 py-2">6</span>
+                <span class="text-sm text-slate-700 py-2">7</span>
+                <span class="text-sm text-slate-700 py-2">8</span>
+                <span class="text-sm text-slate-700 py-2">9</span>
+                <div class="relative flex flex-col items-center">
+                    <span
+                        class="text-sm font-bold text-white bg-primary w-8 h-8 rounded-full flex items-center justify-center shadow-md">10</span>
+                    <span class="absolute -bottom-1 w-1 h-1 bg-secondary rounded-full"></span>
+                </div>
+                <span class="text-sm text-slate-700 py-2">11</span>
+                <span class="text-sm text-slate-700 py-2">12</span>
+
+                <span class="text-sm text-slate-700 py-2">13</span>
+                <span class="text-sm text-slate-700 py-2">14</span>
+                <div class="relative flex flex-col items-center">
+                    <span class="text-sm text-slate-700 py-2">15</span>
+                    <span class="absolute bottom-1 w-1 h-1 bg-red-500 rounded-full"></span>
+                </div>
+                <span class="text-sm text-slate-700 py-2">16</span>
+                <span class="text-sm text-slate-700 py-2">17</span>
+                <span class="text-sm text-slate-700 py-2">18</span>
+                <span class="text-sm text-slate-700 py-2">19</span>
+            </div>
+        </div>
+
+        <!-- Schedule List -->
+        <div class="space-y-4 animate-fade-in delay-100">
+            <h2 class="text-lg font-bold text-primary">Lịch trình hôm nay</h2>
+
+            <!-- Event 1 -->
+            <div class="flex gap-4">
+                <div class="flex flex-col items-center pt-1">
+                    <span class="text-sm font-bold text-slate-800">09:00</span>
+                    <div class="w-0.5 h-full bg-slate-200 mt-2"></div>
+                </div>
+                <div class="flex-1 bg-blue-50 p-4 rounded-xl border-l-4 border-blue-500 mb-4">
+                    <h3 class="font-bold text-slate-800">Họp Team Weekly</h3>
+                    <p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+                        <i data-lucide="map-pin" class="w-3 h-3"></i> Phòng họp 202
+                    </p>
+                    <div class="flex -space-x-2 mt-3">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            class="w-6 h-6 rounded-full border border-white" alt="User">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            class="w-6 h-6 rounded-full border border-white" alt="User">
+                        <div
+                            class="w-6 h-6 rounded-full bg-slate-200 border border-white flex items-center justify-center text-[10px] font-bold text-slate-600">
+                            +3</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="flex gap-4">
+                <div class="flex flex-col items-center pt-1">
+                    <span class="text-sm font-bold text-slate-800">14:00</span>
+                    <div class="w-0.5 h-full bg-slate-200 mt-2"></div>
+                </div>
+                <div class="flex-1 bg-purple-50 p-4 rounded-xl border-l-4 border-purple-500 mb-4">
+                    <h3 class="font-bold text-slate-800">Training: Security Awareness</h3>
+                    <p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+                        <i data-lucide="video" class="w-3 h-3"></i> Online (Zoom)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="flex gap-4">
+                <div class="flex flex-col items-center pt-1">
+                    <span class="text-sm font-bold text-slate-800">16:30</span>
+                </div>
+                <div class="flex-1 bg-green-50 p-4 rounded-xl border-l-4 border-green-500">
+                    <h3 class="font-bold text-slate-800">Review KPI với Quản lý</h3>
+                    <p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+                        <i data-lucide="user" class="w-3 h-3"></i> 1-on-1
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation (Manager) -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 pb-safe pt-2 px-6 flex justify-between items-center z-50">
+        <a href="manager_home.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Dash</span>
+        </a>
+        <a href="manager_approvals.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <div class="relative">
+                <i data-lucide="check-square" class="w-6 h-6"></i>
+                <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+            </div>
+            <span class="text-[10px] font-medium">Duyệt</span>
+        </a>
+        <div class="relative -top-6">
+            <a href="manager_assign_task.html"
+                class="w-14 h-14 rounded-full bg-primary text-white shadow-lg flex items-center justify-center transform hover:scale-105 transition-transform">
+                <i data-lucide="plus" class="w-7 h-7"></i>
+            </a>
+        </div>
+        <a href="manager_team_list.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="users" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Team</span>
+        </a>
+        <a href="profile.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="user" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Cá nhân</span>
+        </a>
+    </nav>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

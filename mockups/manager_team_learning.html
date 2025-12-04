@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Team Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="manager_home.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Đào tạo Team</h1>
+        <a href="manager_learning_approvals.html" class="ml-auto relative p-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="inbox" class="w-6 h-6 text-slate-600"></i>
+            <span class="absolute top-1 right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></span>
+        </a>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Overview Stats -->
+        <section class="grid grid-cols-2 gap-3 animate-fade-in">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                <p class="text-xs text-muted mb-1">Tỷ lệ hoàn thành</p>
+                <div class="flex items-end gap-2">
+                    <span class="text-3xl font-bold text-green-600">85%</span>
+                    <i data-lucide="trending-up" class="w-5 h-5 text-green-500 mb-1"></i>
+                </div>
+                <p class="text-[10px] text-slate-400 mt-1">Mục tiêu: 90%</p>
+            </div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                <p class="text-xs text-muted mb-1">Giờ học trung bình</p>
+                <div class="flex items-end gap-2">
+                    <span class="text-3xl font-bold text-primary">12h</span>
+                    <span class="text-xs text-slate-500 mb-1">/người</span>
+                </div>
+                <p class="text-[10px] text-slate-400 mt-1">Tháng này</p>
+            </div>
+        </section>
+
+        <!-- Compliance Warning -->
+        <section class="bg-orange-50 p-4 rounded-2xl border border-orange-100 animate-fade-in delay-100">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="text-sm font-bold text-orange-800 flex items-center gap-2">
+                    <i data-lucide="alert-circle" class="w-4 h-4"></i>
+                    Nhắc nhở tuân thủ
+                </h3>
+                <span class="text-xs font-bold text-orange-600">Hạn: 31/12</span>
+            </div>
+            <p class="text-xs text-orange-700 mb-3">2 nhân viên chưa hoàn thành khóa "An toàn thông tin 2025".</p>
+            <div class="flex -space-x-2">
+                <img src="https://i.pravatar.cc/150?u=3" class="w-8 h-8 rounded-full border-2 border-white" alt="User">
+                <img src="https://i.pravatar.cc/150?u=4" class="w-8 h-8 rounded-full border-2 border-white" alt="User">
+                <button
+                    class="w-8 h-8 rounded-full bg-white border border-orange-200 flex items-center justify-center text-[10px] font-bold text-orange-600 shadow-sm">Nhắc</button>
+            </div>
+        </section>
+
+        <!-- Team Members List -->
+        <section class="animate-fade-in delay-200">
+            <h2 class="text-lg font-bold text-primary mb-3">Chi tiết thành viên</h2>
+
+            <div class="space-y-3">
+                <!-- Member 1 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
+                    <img src="https://i.pravatar.cc/150?u=1" class="w-12 h-12 rounded-full" alt="User">
+                    <div class="flex-1">
+                        <h3 class="font-bold text-sm text-slate-800">Nguyễn Văn A</h3>
+                        <div class="w-full h-1.5 bg-slate-100 rounded-full mt-2 overflow-hidden">
+                            <div class="h-full bg-green-500 w-[90%]"></div>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span class="text-[10px] text-muted">9/10 khóa học</span>
+                            <span class="text-[10px] font-bold text-green-600">Xuất sắc</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
+                    <img src="https://i.pravatar.cc/150?u=2" class="w-12 h-12 rounded-full" alt="User">
+                    <div class="flex-1">
+                        <h3 class="font-bold text-sm text-slate-800">Phạm Thị B</h3>
+                        <div class="w-full h-1.5 bg-slate-100 rounded-full mt-2 overflow-hidden">
+                            <div class="h-full bg-yellow-500 w-[60%]"></div>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span class="text-[10px] text-muted">3/5 khóa học</span>
+                            <span class="text-[10px] font-bold text-yellow-600">Đang học</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
+                    <img src="https://i.pravatar.cc/150?u=3" class="w-12 h-12 rounded-full grayscale opacity-70"
+                        alt="User">
+                    <div class="flex-1">
+                        <h3 class="font-bold text-sm text-slate-800">Lê Văn C</h3>
+                        <div class="w-full h-1.5 bg-slate-100 rounded-full mt-2 overflow-hidden">
+                            <div class="h-full bg-red-500 w-[20%]"></div>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span class="text-[10px] text-muted">1/5 khóa học</span>
+                            <span class="text-[10px] font-bold text-red-600">Cần nhắc nhở</span>
+                        </div>
+                    </div>
+                    <button class="p-2 bg-slate-100 rounded-full text-slate-500 hover:text-primary hover:bg-blue-50">
+                        <i data-lucide="bell-ring" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Navigation (Manager) -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 pb-safe pt-2 px-6 flex justify-between items-center z-50">
+        <a href="manager_home.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Dash</span>
+        </a>
+        <a href="manager_approvals.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <div class="relative">
+                <i data-lucide="check-square" class="w-6 h-6"></i>
+                <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+            </div>
+            <span class="text-[10px] font-medium">Duyệt</span>
+        </a>
+        <div class="relative -top-6">
+            <a href="manager_assign_task.html"
+                class="w-14 h-14 rounded-full bg-primary text-white shadow-lg flex items-center justify-center transform hover:scale-105 transition-transform">
+                <i data-lucide="plus" class="w-7 h-7"></i>
+            </a>
+        </div>
+        <a href="manager_team_list.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="users" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Team</span>
+        </a>
+        <a href="profile.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="user" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Cá nhân</span>
+        </a>
+    </nav>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

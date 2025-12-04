@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Sức khỏe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <h1 class="text-xl font-bold text-primary">Wellbeing</h1>
+        <div class="ml-auto flex gap-3">
+            <button class="p-2 rounded-full hover:bg-slate-100">
+                <i data-lucide="bell" class="w-6 h-6 text-slate-600"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Daily Stats -->
+        <div class="grid grid-cols-2 gap-4 animate-fade-in">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
+                <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 mb-2">
+                    <i data-lucide="footprints" class="w-6 h-6"></i>
+                </div>
+                <span class="text-2xl font-bold text-slate-800">4,521</span>
+                <span class="text-xs text-muted">Bước chân</span>
+            </div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
+                <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600 mb-2">
+                    <i data-lucide="flame" class="w-6 h-6"></i>
+                </div>
+                <span class="text-2xl font-bold text-slate-800">320</span>
+                <span class="text-xs text-muted">Calories</span>
+            </div>
+        </div>
+
+        <!-- My Benefits Access -->
+        <a href="benefits.html"
+            class="block bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-4 text-white shadow-lg flex items-center justify-between animate-fade-in">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                    <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">Bảo hiểm & Phúc lợi</h3>
+                    <p class="text-xs opacity-80">Xem quyền lợi và gửi yêu cầu</p>
+                </div>
+            </div>
+            <i data-lucide="chevron-right" class="w-6 h-6 opacity-80"></i>
+        </a>
+
+        <!-- Active Challenge -->
+        <section class="animate-fade-in delay-100">
+            <div class="flex justify-between items-center mb-3">
+                <h2 class="text-lg font-bold text-primary">Thử thách đang diễn ra</h2>
+                <a href="#" class="text-xs text-secondary font-semibold">Bảng xếp hạng</a>
+            </div>
+
+            <div
+                class="bg-gradient-to-br from-primary to-blue-900 rounded-2xl p-5 text-white shadow-lg relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <i data-lucide="trophy" class="w-32 h-32"></i>
+                </div>
+
+                <div class="relative z-10">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-white/20 text-xs font-bold px-2 py-1 rounded-md">Tháng 11</span>
+                            <h3 class="text-xl font-bold mt-1">10,000 Steps Challenge</h3>
+                        </div>
+                        <div class="text-center">
+                            <span class="block text-xs opacity-80">Hạng của bạn</span>
+                            <span class="text-2xl font-bold">#45</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs opacity-90">
+                            <span>Tiến độ hôm nay</span>
+                            <span>4,521 / 10,000</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-2">
+                            <div class="bg-secondary h-2 rounded-full" style="width: 45%"></div>
+                        </div>
+                    </div>
+
+                    <button
+                        class="mt-4 w-full py-2 bg-white text-primary font-bold rounded-xl text-sm hover:bg-slate-100 transition-colors">
+                        Cập nhật dữ liệu
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- EAP / Counseling -->
+        <section class="animate-fade-in delay-200">
+            <h2 class="text-lg font-bold text-primary mb-3">Chăm sóc tinh thần (EAP)</h2>
+
+            <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-xl bg-teal-100 flex items-center justify-center shrink-0">
+                        <i data-lucide="heart-handshake" class="w-8 h-8 text-teal-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">Tư vấn tâm lý 1-1</h3>
+                        <p class="text-xs text-muted mt-1 leading-relaxed">
+                            Đặt lịch hẹn bí mật với chuyên gia tâm lý. Ngân hàng hỗ trợ 100% chi phí và bảo mật danh
+                            tính.
+                        </p>
+                    </div>
+                </div>
+
+                <button
+                    class="w-full py-3 bg-teal-50 text-teal-700 font-bold rounded-xl border border-teal-100 hover:bg-teal-100 transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="calendar-plus" class="w-5 h-5"></i>
+                    Đặt lịch tư vấn
+                </button>
+                <p class="text-[10px] text-center text-slate-400 mt-2">
+                    <i data-lucide="lock" class="w-3 h-3 inline align-middle"></i>
+                    Thông tin hoàn toàn bảo mật
+                </p>
+            </div>
+        </section>
+
+        <!-- Lifestyle / Benefits -->
+        <section class="animate-fade-in delay-300">
+            <h2 class="text-lg font-bold text-primary mb-3">Ưu đãi Lifestyle</h2>
+            <div class="flex overflow-x-auto gap-4 hide-scrollbar pb-2">
+                <div class="min-w-[200px] h-32 rounded-xl relative overflow-hidden shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        class="w-full h-full object-cover" alt="Gym">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-3">
+                        <span class="text-white font-bold text-sm">California Fitness</span>
+                        <span class="text-secondary text-xs font-bold">-30% Membership</span>
+                    </div>
+                </div>
+                <div class="min-w-[200px] h-32 rounded-xl relative overflow-hidden shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        class="w-full h-full object-cover" alt="Food">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-3">
+                        <span class="text-white font-bold text-sm">Healthy Box</span>
+                        <span class="text-secondary text-xs font-bold">Buy 1 Get 1</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Nav -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 pb-safe pt-2 px-6 flex justify-between items-center z-50">
+        <a href="home.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="home" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="learning.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Học tập</span>
+        </a>
+        <div class="relative -top-6">
+            <a href="create_task.html"
+                class="w-14 h-14 rounded-full bg-secondary text-white shadow-lg flex items-center justify-center transform hover:scale-105 transition-transform">
+                <i data-lucide="plus" class="w-8 h-8"></i>
+            </a>
+        </div>
+        <a href="wellbeing.html" class="flex flex-col items-center gap-1 text-primary">
+            <i data-lucide="heart" class="w-6 h-6 fill-current"></i>
+            <span class="text-[10px] font-medium">Sức khỏe</span>
+        </a>
+        <a href="profile.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="user" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Cá nhân</span>
+        </a>
+    </nav>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

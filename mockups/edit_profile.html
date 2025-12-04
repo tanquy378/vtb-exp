@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Cập nhật Hồ sơ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="profile.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Cập nhật Hồ sơ</h1>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <form onsubmit="handleSubmit(event)" class="space-y-5">
+
+            <!-- Read-only Section -->
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-4 opacity-80">
+                <div class="flex items-center gap-2 mb-2">
+                    <i data-lucide="lock" class="w-4 h-4 text-slate-400"></i>
+                    <span class="text-xs font-bold text-slate-500 uppercase">Thông tin cố định</span>
+                </div>
+
+                <div>
+                    <label class="block text-xs text-slate-500 mb-1">Mã nhân viên</label>
+                    <input type="text" value="EMP12345" disabled
+                        class="w-full p-2 bg-slate-100 border border-slate-200 rounded-lg text-sm text-slate-500 font-medium">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-500 mb-1">Email công ty</label>
+                    <input type="text" value="banker.nv@big4bank.com" disabled
+                        class="w-full p-2 bg-slate-100 border border-slate-200 rounded-lg text-sm text-slate-500 font-medium">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs text-slate-500 mb-1">Phòng ban</label>
+                        <input type="text" value="Khách hàng Cá nhân" disabled
+                            class="w-full p-2 bg-slate-100 border border-slate-200 rounded-lg text-sm text-slate-500 font-medium">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-500 mb-1">Chức vụ</label>
+                        <input type="text" value="Chuyên viên" disabled
+                            class="w-full p-2 bg-slate-100 border border-slate-200 rounded-lg text-sm text-slate-500 font-medium">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editable Section -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 space-y-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <i data-lucide="edit-3" class="w-4 h-4 text-primary"></i>
+                    <span class="text-xs font-bold text-primary uppercase">Thông tin liên hệ</span>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Số điện thoại <span
+                            class="text-red-500">*</span></label>
+                    <input type="tel" id="mobile" required
+                        class="w-full p-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                        value="0912345678" placeholder="Nhập số điện thoại">
+                    <p id="mobile-error" class="text-xs text-red-500 mt-1 hidden">Số điện thoại không hợp lệ (10 số, đầu
+                        03/05/07/08/09)</p>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Email cá nhân</label>
+                    <input type="email"
+                        class="w-full p-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                        value="nguyenvanbanker@gmail.com" placeholder="Nhập email cá nhân">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Địa chỉ hiện tại</label>
+                    <textarea rows="3"
+                        class="w-full p-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"
+                        placeholder="Nhập địa chỉ thường trú">123 Đường Láng, Đống Đa, Hà Nội</textarea>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 p-3 rounded-lg flex gap-2 items-start">
+                <i data-lucide="info" class="w-4 h-4 text-blue-600 mt-0.5 shrink-0"></i>
+                <p class="text-xs text-blue-800 leading-relaxed">
+                    Yêu cầu thay đổi thông tin sẽ được gửi đến bộ phận HR để phê duyệt. Quá trình này có thể mất đến 24h
+                    làm việc.
+                </p>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit"
+                class="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-blue-900 transition-all active:scale-95 flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-5 h-5"></i>
+                Gửi yêu cầu thay đổi
+            </button>
+
+        </form>
+
+    </main>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="fixed inset-0 bg-black/50 z-[60] hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-xs p-6 animate-fade-in">
+            <h3 class="text-lg font-bold text-slate-800 mb-2">Xác nhận thay đổi?</h3>
+            <p class="text-sm text-slate-600 mb-6">Bạn có chắc chắn muốn gửi yêu cầu cập nhật thông tin này đến HR
+                không?</p>
+            <div class="flex gap-3">
+                <button onclick="closeModal()"
+                    class="flex-1 py-2.5 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200">Hủy</button>
+                <button onclick="confirmSubmit()"
+                    class="flex-1 py-2.5 bg-primary text-white font-bold rounded-xl hover:bg-blue-900">Gửi đi</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Overlay -->
+    <div id="success-overlay"
+        class="fixed inset-0 bg-white/90 backdrop-blur-sm z-[70] flex flex-col items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-4 animate-bounce">
+            <i data-lucide="check-circle" class="w-10 h-10 text-green-600"></i>
+        </div>
+        <h2 class="text-xl font-bold text-slate-800">Đã gửi yêu cầu!</h2>
+        <p class="text-slate-500 mt-2 text-center px-4">HR sẽ xem xét yêu cầu của bạn trong 24h.</p>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            // Validate Mobile
+            const mobile = document.getElementById('mobile').value;
+            const mobileRegex = /^(03|05|07|08|09)+([0-9]{8})$/;
+            const errorMsg = document.getElementById('mobile-error');
+
+            if (!mobileRegex.test(mobile)) {
+                errorMsg.classList.remove('hidden');
+                return;
+            } else {
+                errorMsg.classList.add('hidden');
+            }
+
+            // Show Confirm Modal
+            document.getElementById('confirm-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('confirm-modal').classList.add('hidden');
+        }
+
+        function confirmSubmit() {
+            closeModal();
+            const overlay = document.getElementById('success-overlay');
+
+            // Show success
+            overlay.classList.remove('hidden');
+            setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+
+            // Redirect
+            setTimeout(() => {
+                window.location.href = 'profile.html';
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

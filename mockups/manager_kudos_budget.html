@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Ngân sách Khen thưởng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="manager_communication.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Ngân sách Khen thưởng</h1>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Budget Card -->
+        <div class="bg-gradient-to-br from-purple-600 to-indigo-800 rounded-2xl p-6 text-white shadow-lg text-center">
+            <p class="text-sm opacity-80 mb-1">Ngân sách còn lại (Tháng 12)</p>
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <span class="text-4xl font-bold">2.500.000</span>
+                <span class="text-lg font-medium">VNĐ</span>
+            </div>
+            <div class="flex justify-center gap-4 text-xs opacity-80">
+                <div>
+                    <p>Tổng cấp</p>
+                    <p class="font-bold">5.000.000</p>
+                </div>
+                <div class="w-px bg-white/30"></div>
+                <div>
+                    <p>Đã dùng</p>
+                    <p class="font-bold">2.500.000</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Award -->
+        <section class="animate-fade-in delay-100">
+            <h2 class="text-lg font-bold text-primary mb-3">Trao thưởng nhanh</h2>
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+                        <i data-lucide="search" class="w-5 h-5 text-slate-400"></i>
+                    </div>
+                    <input type="text" class="flex-1 bg-transparent text-sm focus:outline-none"
+                        placeholder="Tìm nhân viên để khen thưởng...">
+                </div>
+
+                <div class="space-y-3">
+                    <!-- Employee 1 -->
+                    <div
+                        class="flex items-center justify-between p-2 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <img src="https://i.pravatar.cc/150?u=1" class="w-10 h-10 rounded-full" alt="User">
+                            <div>
+                                <p class="text-sm font-bold">Nguyễn Văn A</p>
+                                <p class="text-xs text-muted">Đã nhận: 500k</p>
+                            </div>
+                        </div>
+                        <button
+                            class="px-3 py-1.5 bg-purple-100 text-purple-700 text-xs font-bold rounded-lg hover:bg-purple-200">
+                            Thưởng
+                        </button>
+                    </div>
+
+                    <!-- Employee 2 -->
+                    <div
+                        class="flex items-center justify-between p-2 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <img src="https://i.pravatar.cc/150?u=2" class="w-10 h-10 rounded-full" alt="User">
+                            <div>
+                                <p class="text-sm font-bold">Phạm Thị B</p>
+                                <p class="text-xs text-muted">Đã nhận: 200k</p>
+                            </div>
+                        </div>
+                        <button
+                            class="px-3 py-1.5 bg-purple-100 text-purple-700 text-xs font-bold rounded-lg hover:bg-purple-200">
+                            Thưởng
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History -->
+        <section class="animate-fade-in delay-200">
+            <h2 class="text-lg font-bold text-primary mb-3">Lịch sử trao thưởng</h2>
+            <div class="space-y-3">
+                <div
+                    class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex justify-between items-center">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center text-green-600">
+                            <i data-lucide="award" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold">Nguyễn Văn A</p>
+                            <p class="text-xs text-muted">Nhân viên xuất sắc tháng</p>
+                        </div>
+                    </div>
+                    <span class="text-sm font-bold text-red-600">-500.000</span>
+                </div>
+                <div
+                    class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex justify-between items-center">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                            <i data-lucide="thumbs-up" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold">Trần Thị D</p>
+                            <p class="text-xs text-muted">Hỗ trợ dự án gấp</p>
+                        </div>
+                    </div>
+                    <span class="text-sm font-bold text-red-600">-200.000</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

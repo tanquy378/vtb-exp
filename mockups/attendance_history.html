@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Lịch sử chấm công</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-10 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="clock_in.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Lịch sử chấm công</h1>
+        <div class="ml-auto relative">
+            <select
+                class="appearance-none bg-slate-100 text-primary font-semibold text-sm py-1 pl-3 pr-8 rounded-full border-none focus:ring-0">
+                <option>Tháng 12/2025</option>
+                <option>Tháng 11/2025</option>
+            </select>
+            <i data-lucide="chevron-down" class="absolute right-2 top-1.5 w-4 h-4 text-primary pointer-events-none"></i>
+        </div>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Monthly Summary -->
+        <div class="grid grid-cols-3 gap-3 animate-fade-in">
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center">
+                <span class="text-xs text-muted mb-1">Công chuẩn</span>
+                <span class="text-lg font-bold text-slate-800">22</span>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center">
+                <span class="text-xs text-muted mb-1">Thực tế</span>
+                <span class="text-lg font-bold text-green-600">18</span>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center">
+                <span class="text-xs text-muted mb-1">Đi muộn</span>
+                <span class="text-lg font-bold text-red-500">1</span>
+            </div>
+        </div>
+
+        <!-- Weekly Chart Placeholder -->
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 animate-fade-in delay-100">
+            <h3 class="text-sm font-bold text-primary mb-4">Số giờ làm việc tuần này</h3>
+            <div class="flex items-end justify-between h-32 gap-2">
+                <!-- Mon -->
+                <div class="flex flex-col items-center gap-1 w-full">
+                    <div class="w-full bg-blue-100 rounded-t-lg relative group h-full flex items-end">
+                        <div class="w-full bg-primary rounded-t-lg" style="height: 100%"></div>
+                    </div>
+                    <span class="text-[10px] text-muted">T2</span>
+                </div>
+                <!-- Tue -->
+                <div class="flex flex-col items-center gap-1 w-full">
+                    <div class="w-full bg-blue-100 rounded-t-lg relative group h-full flex items-end">
+                        <div class="w-full bg-primary rounded-t-lg" style="height: 95%"></div>
+                    </div>
+                    <span class="text-[10px] text-muted">T3</span>
+                </div>
+                <!-- Wed -->
+                <div class="flex flex-col items-center gap-1 w-full">
+                    <div class="w-full bg-blue-100 rounded-t-lg relative group h-full flex items-end">
+                        <div class="w-full bg-primary rounded-t-lg" style="height: 100%"></div>
+                    </div>
+                    <span class="text-[10px] text-muted">T4</span>
+                </div>
+                <!-- Thu -->
+                <div class="flex flex-col items-center gap-1 w-full">
+                    <div class="w-full bg-blue-100 rounded-t-lg relative group h-full flex items-end">
+                        <div class="w-full bg-primary rounded-t-lg" style="height: 90%"></div>
+                    </div>
+                    <span class="text-[10px] text-muted">T5</span>
+                </div>
+                <!-- Fri -->
+                <div class="flex flex-col items-center gap-1 w-full">
+                    <div class="w-full bg-blue-100 rounded-t-lg relative group h-full flex items-end">
+                        <div class="w-full bg-secondary rounded-t-lg" style="height: 40%"></div> <!-- Half day -->
+                    </div>
+                    <span class="text-[10px] text-muted">T6</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daily Logs -->
+        <div class="space-y-3 animate-fade-in delay-200">
+            <h3 class="text-sm font-bold text-primary">Chi tiết chấm công</h3>
+
+            <!-- Today -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-green-500">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="font-bold text-slate-800">Hôm nay, 05/12</span>
+                    <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-md">Đúng giờ</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <div>
+                        <p class="text-xs text-muted">Check In</p>
+                        <p class="font-mono font-medium">07:55</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs text-muted">Check Out</p>
+                        <p class="font-mono font-medium text-slate-400">--:--</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yesterday -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-green-500">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="font-bold text-slate-800">Hôm qua, 04/12</span>
+                    <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-md">Đúng giờ</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <div>
+                        <p class="text-xs text-muted">Check In</p>
+                        <p class="font-mono font-medium">07:58</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs text-muted">Check Out</p>
+                        <p class="font-mono font-medium">17:05</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Late Day -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-red-500">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="font-bold text-slate-800">Thứ Ba, 03/12</span>
+                    <span class="text-xs font-bold text-red-600 bg-red-50 px-2 py-1 rounded-md">Muộn 15p</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <div>
+                        <p class="text-xs text-muted">Check In</p>
+                        <p class="font-mono font-medium text-red-600">08:15</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs text-muted">Check Out</p>
+                        <p class="font-mono font-medium">17:30</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

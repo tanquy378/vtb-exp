@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Công việc của tôi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="home.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Công việc của tôi</h1>
+        <div class="ml-auto flex gap-2">
+            <button class="p-2 rounded-full hover:bg-slate-100">
+                <i data-lucide="search" class="w-6 h-6 text-slate-600"></i>
+            </button>
+            <button class="p-2 rounded-full hover:bg-slate-100">
+                <i data-lucide="filter" class="w-6 h-6 text-slate-600"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Stats -->
+        <div class="flex gap-3 overflow-x-auto hide-scrollbar pb-2">
+            <div class="min-w-[120px] bg-blue-50 p-3 rounded-xl border border-blue-100">
+                <p class="text-xs text-blue-600 font-bold mb-1">Hôm nay</p>
+                <p class="text-2xl font-bold text-blue-900">5</p>
+            </div>
+            <div class="min-w-[120px] bg-orange-50 p-3 rounded-xl border border-orange-100">
+                <p class="text-xs text-orange-600 font-bold mb-1">Sắp tới</p>
+                <p class="text-2xl font-bold text-orange-900">12</p>
+            </div>
+            <div class="min-w-[120px] bg-red-50 p-3 rounded-xl border border-red-100">
+                <p class="text-xs text-red-600 font-bold mb-1">Quá hạn</p>
+                <p class="text-2xl font-bold text-red-900">2</p>
+            </div>
+        </div>
+
+        <!-- View Toggle -->
+        <div class="bg-slate-100 p-1 rounded-lg flex">
+            <button
+                class="flex-1 py-1.5 bg-white rounded-md shadow-sm text-xs font-bold text-slate-800 flex items-center justify-center gap-2">
+                <i data-lucide="list" class="w-4 h-4"></i> Danh sách
+            </button>
+            <button
+                class="flex-1 py-1.5 text-xs font-bold text-slate-500 flex items-center justify-center gap-2 hover:bg-white/50 rounded-md transition-colors">
+                <i data-lucide="kanban" class="w-4 h-4"></i> Kanban
+            </button>
+        </div>
+
+        <!-- Task List -->
+        <div class="space-y-4 animate-fade-in">
+
+            <!-- Overdue Section -->
+            <div>
+                <h2 class="text-sm font-bold text-red-600 mb-3 flex items-center gap-2">
+                    <i data-lucide="alert-circle" class="w-4 h-4"></i> Quá hạn
+                </h2>
+                <div class="space-y-3">
+                    <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-red-500 flex items-start gap-3">
+                        <button
+                            class="mt-1 w-5 h-5 rounded-full border-2 border-slate-300 hover:border-primary hover:bg-blue-50 transition-colors"></button>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-slate-800 line-clamp-1">Gửi báo cáo doanh số Q3</h3>
+                            <p class="text-xs text-red-500 font-medium mt-1">Hết hạn: Hôm qua</p>
+                            <div class="flex gap-2 mt-2">
+                                <span
+                                    class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] rounded-md">Admin</span>
+                                <span
+                                    class="px-2 py-0.5 bg-red-100 text-red-600 text-[10px] rounded-md font-bold">High</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Today Section -->
+            <div>
+                <h2 class="text-sm font-bold text-slate-800 mb-3">Hôm nay</h2>
+                <div class="space-y-3">
+
+                    <!-- Task Item -->
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-start gap-3">
+                        <button
+                            class="mt-1 w-5 h-5 rounded-full border-2 border-slate-300 hover:border-primary hover:bg-blue-50 transition-colors"></button>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-slate-800 line-clamp-1">Họp team Marketing</h3>
+                            <p class="text-xs text-slate-500 mt-1">14:00 - 15:00 • Phòng họp 202</p>
+                            <div class="flex gap-2 mt-2">
+                                <span
+                                    class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] rounded-md">Meeting</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task Item -->
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-start gap-3">
+                        <button
+                            class="mt-1 w-5 h-5 rounded-full border-2 border-slate-300 hover:border-primary hover:bg-blue-50 transition-colors"></button>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-slate-800 line-clamp-1">Review thiết kế Landing Page</h3>
+                            <p class="text-xs text-slate-500 mt-1">Trước 17:00</p>
+                            <div class="flex gap-2 mt-2">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] rounded-md">Project
+                                    A</span>
+                                <span
+                                    class="px-2 py-0.5 bg-orange-100 text-orange-600 text-[10px] rounded-md font-bold">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Upcoming Section -->
+            <div>
+                <h2 class="text-sm font-bold text-slate-800 mb-3">Ngày mai</h2>
+                <div class="space-y-3">
+                    <div
+                        class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-start gap-3 opacity-80">
+                        <button
+                            class="mt-1 w-5 h-5 rounded-full border-2 border-slate-300 hover:border-primary hover:bg-blue-50 transition-colors"></button>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-slate-800 line-clamp-1">Chuẩn bị slide training</h3>
+                            <p class="text-xs text-slate-500 mt-1">09:00</p>
+                            <div class="flex gap-2 mt-2">
+                                <span
+                                    class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] rounded-md">Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Floating Action Button -->
+    <a href="create_task.html"
+        class="fixed bottom-6 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-xl flex items-center justify-center hover:bg-blue-900 transition-transform hover:scale-110 active:scale-95 z-50">
+        <i data-lucide="plus" class="w-8 h-8"></i>
+    </a>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

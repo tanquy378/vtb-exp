@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Đặt xe công ty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="home.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Đặt xe công tác</h1>
+        <button class="ml-auto text-sm font-semibold text-primary">Lịch sử</button>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Booking Form -->
+        <form class="space-y-5 animate-fade-in">
+
+            <!-- Trip Type -->
+            <div class="flex p-1 bg-slate-100 rounded-xl">
+                <button type="button"
+                    class="flex-1 py-2 text-sm font-semibold rounded-lg bg-white text-primary shadow-sm transition-all">Một
+                    chiều</button>
+                <button type="button"
+                    class="flex-1 py-2 text-sm font-medium text-slate-500 hover:text-slate-700 transition-all">Khứ
+                    hồi</button>
+            </div>
+
+            <!-- Locations -->
+            <div class="space-y-4 relative">
+                <!-- Connecting Line -->
+                <div
+                    class="absolute left-[19px] top-10 bottom-10 w-0.5 bg-slate-200 border-l border-dashed border-slate-300 z-0">
+                </div>
+
+                <div class="relative z-10">
+                    <label class="text-xs font-bold text-slate-500 uppercase ml-8 mb-1 block">Điểm đón</label>
+                    <div class="flex items-center gap-3">
+                        <div class="w-4 h-4 rounded-full border-4 border-blue-500 bg-white shrink-0"></div>
+                        <div class="flex-1 relative">
+                            <select
+                                class="w-full p-3 bg-white border border-slate-200 rounded-xl appearance-none focus:outline-none focus:border-primary font-medium">
+                                <option>Hội sở chính - 198 Trần Quang Khải</option>
+                                <option>Chi nhánh Ba Đình</option>
+                                <option>Chi nhánh Cầu Giấy</option>
+                                <option>Địa điểm khác...</option>
+                            </select>
+                            <i data-lucide="chevron-down"
+                                class="absolute right-3 top-3.5 w-5 h-5 text-slate-400 pointer-events-none"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative z-10">
+                    <label class="text-xs font-bold text-slate-500 uppercase ml-8 mb-1 block">Điểm đến</label>
+                    <div class="flex items-center gap-3">
+                        <div class="w-4 h-4 rounded-full border-4 border-secondary bg-white shrink-0"></div>
+                        <div class="flex-1 relative">
+                            <input type="text"
+                                class="w-full p-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-primary font-medium"
+                                placeholder="Nhập địa chỉ đến..." value="Sân bay Nội Bài">
+                            <i data-lucide="map-pin" class="absolute right-3 top-3.5 w-5 h-5 text-slate-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Date & Time -->
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-2">
+                    <label class="text-sm font-semibold text-slate-700">Ngày đi</label>
+                    <div class="relative">
+                        <input type="date"
+                            class="w-full p-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-primary"
+                            value="2025-12-06">
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-semibold text-slate-700">Giờ đón</label>
+                    <div class="relative">
+                        <input type="time"
+                            class="w-full p-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-primary"
+                            value="07:00">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-2">
+                    <label class="text-sm font-semibold text-slate-700">Số người</label>
+                    <div class="relative">
+                        <select
+                            class="w-full p-3 bg-white border border-slate-200 rounded-xl appearance-none focus:outline-none focus:border-primary">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5+</option>
+                        </select>
+                        <i data-lucide="chevron-down"
+                            class="absolute right-3 top-3.5 w-5 h-5 text-slate-400 pointer-events-none"></i>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-semibold text-slate-700">Mục đích</label>
+                    <div class="relative">
+                        <select
+                            class="w-full p-3 bg-white border border-slate-200 rounded-xl appearance-none focus:outline-none focus:border-primary">
+                            <option>Gặp khách hàng</option>
+                            <option>Công tác chi nhánh</option>
+                            <option>Sự kiện</option>
+                            <option>Đưa đón sân bay</option>
+                        </select>
+                        <i data-lucide="chevron-down"
+                            class="absolute right-3 top-3.5 w-5 h-5 text-slate-400 pointer-events-none"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Note -->
+            <div class="space-y-2">
+                <label class="text-sm font-semibold text-slate-700">Ghi chú (Tùy chọn)</label>
+                <textarea
+                    class="w-full p-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-primary h-20 resize-none"
+                    placeholder="Yêu cầu đặc biệt (xe 7 chỗ, cốp rộng...)"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button"
+                class="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-blue-900 transition-colors active:scale-95 transform">
+                Đặt xe
+            </button>
+            <p class="text-center text-xs text-muted">Yêu cầu sẽ được phản hồi trong 2 giờ làm việc</p>
+
+        </form>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

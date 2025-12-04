@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Mục tiêu của tôi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="profile.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Mục tiêu (KPIs/OKRs)</h1>
+        <div class="ml-auto">
+            <select class="text-xs bg-slate-100 border-none rounded-lg py-1.5 px-3 font-bold text-slate-600">
+                <option>Q4 2025</option>
+                <option>Q3 2025</option>
+                <option>Năm 2025</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Overall Progress -->
+        <div class="bg-gradient-to-br from-blue-900 to-indigo-800 rounded-2xl p-5 text-white shadow-lg animate-fade-in">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h2 class="font-bold text-lg">Tiến độ tổng thể</h2>
+                    <p class="text-xs opacity-80">Quý 4 - 2025</p>
+                </div>
+                <div class="w-12 h-12 rounded-full border-4 border-white/30 flex items-center justify-center">
+                    <span class="font-bold text-sm">75%</span>
+                </div>
+            </div>
+            <div class="w-full h-2 bg-white/20 rounded-full mb-2 overflow-hidden">
+                <div class="h-full bg-secondary w-[75%] rounded-full shadow-[0_0_10px_rgba(245,158,11,0.5)]"></div>
+            </div>
+            <p class="text-xs opacity-80 text-right">Còn 25 ngày để hoàn thành</p>
+        </div>
+
+        <!-- OKR List -->
+        <div class="space-y-4 animate-fade-in delay-100">
+            <h2 class="text-lg font-bold text-primary">Mục tiêu chi tiết</h2>
+
+            <!-- Objective 1 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <div class="p-4 border-b border-slate-100 bg-slate-50">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-bold text-slate-800 text-sm">O1: Tăng trưởng doanh số khách hàng cá nhân</h3>
+                        <span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded-md">On
+                            Track</span>
+                    </div>
+                    <div class="mt-2 flex items-center gap-2">
+                        <div class="flex-1 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-green-500 w-[80%]"></div>
+                        </div>
+                        <span class="text-xs font-bold text-slate-600">80%</span>
+                    </div>
+                </div>
+                <div class="p-4 space-y-4">
+                    <!-- KR 1.1 -->
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <p class="text-xs text-slate-600 font-medium">KR 1: Đạt doanh số 5 tỷ VND</p>
+                            <span class="text-xs font-bold text-primary">4.2 / 5.0 tỷ</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="84"
+                            class="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary">
+                    </div>
+                    <!-- KR 1.2 -->
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <p class="text-xs text-slate-600 font-medium">KR 2: Mở mới 50 tài khoản Premium</p>
+                            <span class="text-xs font-bold text-primary">35 / 50 TK</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="70"
+                            class="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Objective 2 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <div class="p-4 border-b border-slate-100 bg-slate-50">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-bold text-slate-800 text-sm">O2: Nâng cao năng lực chuyên môn</h3>
+                        <span class="px-2 py-1 bg-orange-100 text-orange-700 text-[10px] font-bold rounded-md">At
+                            Risk</span>
+                    </div>
+                    <div class="mt-2 flex items-center gap-2">
+                        <div class="flex-1 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-orange-500 w-[40%]"></div>
+                        </div>
+                        <span class="text-xs font-bold text-slate-600">40%</span>
+                    </div>
+                </div>
+                <div class="p-4 space-y-4">
+                    <!-- KR 2.1 -->
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <p class="text-xs text-slate-600 font-medium">KR 1: Hoàn thành chứng chỉ AWS</p>
+                            <span class="text-xs font-bold text-primary">Đang học</span>
+                        </div>
+                        <div class="w-full h-1 bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-orange-500 w-[20%]"></div>
+                        </div>
+                    </div>
+                    <!-- KR 2.2 -->
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <p class="text-xs text-slate-600 font-medium">KR 2: Tham gia 2 khóa đào tạo nội bộ</p>
+                            <span class="text-xs font-bold text-primary">1 / 2</span>
+                        </div>
+                        <div class="w-full h-1 bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-orange-500 w-[50%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Floating Action Button -->
+    <a href="create_goal.html"
+        class="fixed bottom-6 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-xl flex items-center justify-center hover:bg-blue-900 transition-transform hover:scale-110 active:scale-95 z-50">
+        <i data-lucide="plus" class="w-8 h-8"></i>
+    </a>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

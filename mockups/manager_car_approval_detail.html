@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Duyệt Xe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="manager_resource_approvals.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Chi tiết đặt xe</h1>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Map Placeholder -->
+        <div
+            class="relative h-48 rounded-2xl overflow-hidden shadow-md animate-fade-in bg-slate-200 flex items-center justify-center">
+            <i data-lucide="map" class="w-12 h-12 text-slate-400"></i>
+            <div class="absolute inset-0 bg-black/10"></div>
+            <!-- Route Visualization -->
+            <div class="absolute top-1/2 left-10 w-2 h-2 bg-blue-500 rounded-full z-10"></div>
+            <div class="absolute top-1/2 right-10 w-2 h-2 bg-red-500 rounded-full z-10"></div>
+            <div class="absolute top-1/2 left-10 right-10 h-0.5 bg-slate-500 border-t-2 border-dashed border-slate-600">
+            </div>
+        </div>
+
+        <!-- Request Details -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 animate-fade-in delay-100">
+            <div class="flex items-center gap-3 mb-4 pb-4 border-b border-slate-100">
+                <img src="https://i.pravatar.cc/150?u=4" class="w-12 h-12 rounded-full" alt="User">
+                <div>
+                    <h3 class="font-bold text-slate-800">Nguyễn Thị D</h3>
+                    <p class="text-xs text-muted">Phó phòng Kinh doanh</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-slate-500"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted">Lộ trình</p>
+                        <p class="text-sm font-semibold">Trụ sở chính ➔ Chi nhánh Hải Phòng</p>
+                        <p class="text-xs text-slate-500 mt-1">Khứ hồi</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="clock" class="w-5 h-5 text-slate-500"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted">Thời gian đón</p>
+                        <p class="text-sm font-semibold">07:00, 15/12/2025</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="users" class="w-5 h-5 text-slate-500"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted">Số người</p>
+                        <p class="text-sm font-semibold">4 người</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="file-text" class="w-5 h-5 text-slate-500"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted">Mục đích</p>
+                        <p class="text-sm text-slate-700">Gặp gỡ đối tác VIP và ký kết hợp đồng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Driver Assignment (Simulated) -->
+        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 animate-fade-in delay-200">
+            <h3 class="text-sm font-bold text-slate-700 mb-2">Điều phối xe (Tự động đề xuất)</h3>
+            <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-slate-200">
+                <img src="https://i.pravatar.cc/150?u=9" class="w-10 h-10 rounded-full" alt="Driver">
+                <div>
+                    <p class="text-sm font-bold">Lê Văn Tài</p>
+                    <p class="text-xs text-muted">Toyota Fortuner • 30A-123.45</p>
+                </div>
+                <button class="ml-auto text-xs font-bold text-primary">Thay đổi</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Action Bar -->
+    <div
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-4 pb-safe z-50 flex gap-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+        <button
+            class="flex-1 py-3 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-colors">
+            Từ chối
+        </button>
+        <button onclick="handleApprove()" id="approve-btn"
+            class="flex-1 py-3 bg-primary text-white font-bold rounded-xl hover:bg-blue-900 transition-colors shadow-md flex items-center justify-center gap-2">
+            <i data-lucide="check" class="w-5 h-5"></i>
+            Duyệt & Điều xe
+        </button>
+    </div>
+
+    <!-- Success Overlay -->
+    <div id="success-overlay"
+        class="fixed inset-0 bg-white/90 backdrop-blur-sm z-[60] flex flex-col items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-4 animate-bounce">
+            <i data-lucide="check" class="w-10 h-10 text-green-600"></i>
+        </div>
+        <h2 class="text-xl font-bold text-slate-800">Đã điều xe thành công!</h2>
+        <p class="text-slate-500 mt-2">Tài xế đã nhận được thông báo.</p>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        function handleApprove() {
+            const btn = document.getElementById('approve-btn');
+            const overlay = document.getElementById('success-overlay');
+
+            // Loading
+            btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Processing';
+            lucide.createIcons();
+
+            setTimeout(() => {
+                // Show success
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+
+                // Redirect
+                setTimeout(() => {
+                    window.location.href = 'manager_resource_approvals.html';
+                }, 1500);
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

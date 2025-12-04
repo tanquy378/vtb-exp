@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Chi tiết Nhân viên</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="manager_team_list.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Hồ sơ Nhân viên</h1>
+        <button class="ml-auto p-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="more-vertical" class="w-6 h-6 text-slate-600"></i>
+        </button>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Profile Header -->
+        <div class="flex flex-col items-center text-center animate-fade-in">
+            <div class="relative mb-3">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                    class="w-24 h-24 rounded-full border-4 border-white shadow-md" alt="User">
+                <div class="absolute bottom-0 right-0 bg-green-500 w-6 h-6 rounded-full border-4 border-white"></div>
+            </div>
+            <h2 class="text-xl font-bold text-slate-800">Trần Văn A</h2>
+            <p class="text-sm text-muted">Senior Developer • IT Division</p>
+            <div class="flex gap-2 mt-3">
+                <button
+                    class="px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-xs font-bold flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> Nhắn tin
+                </button>
+                <button
+                    class="px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-xs font-bold flex items-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i> Email
+                </button>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex p-1 bg-slate-100 rounded-xl">
+            <button onclick="switchTab('kpi')" id="tab-kpi"
+                class="flex-1 py-2 text-xs font-bold rounded-lg bg-white text-primary shadow-sm transition-all">KPI/OKR</button>
+            <button onclick="switchTab('career')" id="tab-career"
+                class="flex-1 py-2 text-xs font-bold rounded-lg text-slate-500 hover:bg-white/50 transition-all">Lộ
+                trình</button>
+            <button onclick="switchTab('learning')" id="tab-learning"
+                class="flex-1 py-2 text-xs font-bold rounded-lg text-slate-500 hover:bg-white/50 transition-all">Học
+                tập</button>
+        </div>
+
+        <!-- KPI Content -->
+        <div id="content-kpi" class="space-y-4 animate-fade-in">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-slate-800 mb-3">Hiệu suất Q4 2025</h3>
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-20 h-20 relative">
+                        <canvas id="kpiChart"></canvas>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-sm font-bold text-primary">95%</span>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-xs text-muted mb-1">Xếp loại dự kiến</p>
+                        <p class="text-lg font-bold text-green-600">Xuất sắc (A)</p>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-600">Hoàn thành dự án Super App</span>
+                            <span class="font-bold text-primary">100%</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-green-500 w-full"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-600">Mentoring Junior Devs</span>
+                            <span class="font-bold text-primary">80%</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500 w-[80%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Content -->
+        <div id="content-career" class="space-y-4 hidden animate-fade-in">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-slate-800 mb-3">Kế hoạch phát triển</h3>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted">Vị trí tiếp theo</p>
+                        <p class="font-bold text-slate-800">Tech Lead</p>
+                    </div>
+                    <div class="ml-auto">
+                        <span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded-md">Ready:
+                            85%</span>
+                    </div>
+                </div>
+
+                <h4 class="text-xs font-bold text-slate-500 mb-2 uppercase">Khoảng cách kỹ năng</h4>
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>
+                        <span class="text-xs text-slate-700">System Design</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>
+                        <span class="text-xs text-slate-700">Code Review</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="circle" class="w-4 h-4 text-slate-300"></i>
+                        <span class="text-xs text-slate-700">Team Management (Cần cải thiện)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Content -->
+        <div id="content-learning" class="space-y-4 hidden animate-fade-in">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-slate-800 mb-3">Tiến độ học tập</h3>
+                <div class="flex gap-4 mb-4">
+                    <div class="flex-1 bg-blue-50 p-3 rounded-lg text-center">
+                        <p class="text-xs text-blue-600 mb-1">Giờ học</p>
+                        <p class="text-xl font-bold text-blue-900">42h</p>
+                    </div>
+                    <div class="flex-1 bg-orange-50 p-3 rounded-lg text-center">
+                        <p class="text-xs text-orange-600 mb-1">Chứng chỉ</p>
+                        <p class="text-xl font-bold text-orange-900">3</p>
+                    </div>
+                </div>
+
+                <h4 class="text-xs font-bold text-slate-500 mb-2 uppercase">Khóa học đang tham gia</h4>
+                <div class="space-y-3">
+                    <div class="flex gap-3">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            class="w-12 h-12 rounded-lg object-cover" alt="Course">
+                        <div class="flex-1">
+                            <h5 class="text-sm font-bold text-slate-800 line-clamp-1">Leadership for Tech Leads</h5>
+                            <div class="w-full h-1.5 bg-slate-100 rounded-full mt-2 overflow-hidden">
+                                <div class="h-full bg-primary w-[60%]"></div>
+                            </div>
+                            <p class="text-[10px] text-muted mt-1">60% hoàn thành</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // KPI Chart
+        const ctx = document.getElementById('kpiChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Completed', 'Remaining'],
+                datasets: [{
+                    data: [95, 5],
+                    backgroundColor: ['#22c55e', '#f1f5f9'],
+                    borderWidth: 0,
+                    cutout: '75%'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: { enabled: false } }
+            }
+        });
+
+        // Tab Switching Logic
+        function switchTab(tabName) {
+            // Reset tabs
+            ['kpi', 'career', 'learning'].forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                const content = document.getElementById(`content-${t}`);
+
+                if (t === tabName) {
+                    btn.classList.remove('text-slate-500', 'hover:bg-white/50');
+                    btn.classList.add('bg-white', 'text-primary', 'shadow-sm');
+                    content.classList.remove('hidden');
+                } else {
+                    btn.classList.add('text-slate-500', 'hover:bg-white/50');
+                    btn.classList.remove('bg-white', 'text-primary', 'shadow-sm');
+                    content.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

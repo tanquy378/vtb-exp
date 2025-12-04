@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super App - Truyền thông Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F59E0B',
+                        surface: '#FFFFFF',
+                        background: '#F8FAFC',
+                        text: '#0F172A',
+                        muted: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-text pb-24 select-none">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass px-4 py-3 flex items-center gap-4 shadow-sm">
+        <a href="manager_home.html" class="p-2 -ml-2 rounded-full hover:bg-slate-100">
+            <i data-lucide="arrow-left" class="w-6 h-6 text-primary"></i>
+        </a>
+        <h1 class="text-lg font-bold text-primary">Truyền thông Team</h1>
+        <a href="manager_create_announcement.html"
+            class="ml-auto relative p-2 rounded-full hover:bg-slate-100 text-primary">
+            <i data-lucide="plus-circle" class="w-6 h-6"></i>
+        </a>
+    </header>
+
+    <main class="pt-20 px-4 space-y-6">
+
+        <!-- Kudos Budget Widget -->
+        <section
+            class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-5 text-white shadow-lg relative overflow-hidden animate-fade-in">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <i data-lucide="award" class="w-32 h-32"></i>
+            </div>
+
+            <div class="relative z-10">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h2 class="text-lg font-bold">Ngân sách Khen thưởng</h2>
+                        <p class="text-xs opacity-80">Tháng 12/2025</p>
+                    </div>
+                    <a href="manager_kudos_budget.html"
+                        class="bg-white/20 hover:bg-white/30 transition-colors px-3 py-1.5 rounded-lg text-xs font-bold backdrop-blur-sm">
+                        Quản lý
+                    </a>
+                </div>
+
+                <div class="flex items-end gap-2 mb-2">
+                    <span class="text-3xl font-bold">2.500.000</span>
+                    <span class="text-sm font-medium mb-1">VNĐ</span>
+                </div>
+
+                <div class="w-full h-2 bg-black/20 rounded-full overflow-hidden mb-2">
+                    <div class="h-full bg-white w-[50%]"></div>
+                </div>
+                <p class="text-xs opacity-80">Đã dùng 50% ngân sách tháng này.</p>
+            </div>
+        </section>
+
+        <!-- Recent Announcements -->
+        <section class="animate-fade-in delay-100">
+            <h2 class="text-lg font-bold text-primary mb-3">Thông báo đã gửi</h2>
+
+            <div class="space-y-3">
+                <!-- Post 1 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-slate-800 line-clamp-1">Chúc mừng dự án X thành công!</h3>
+                        <span class="text-[10px] text-slate-400 whitespace-nowrap">Hôm qua</span>
+                    </div>
+                    <p class="text-xs text-slate-600 line-clamp-2 mb-3">Cảm ơn mọi người đã nỗ lực hết mình trong 2 tuần
+                        qua để đưa dự án về đích đúng hạn...</p>
+                    <div class="flex items-center gap-4 text-xs text-slate-500">
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="eye" class="w-3 h-3"></i>
+                            <span>18/20 đã xem</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="thumbs-up" class="w-3 h-3"></i>
+                            <span>15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-slate-800 line-clamp-1">Lịch họp Review Quý 4</h3>
+                        <span class="text-[10px] text-slate-400 whitespace-nowrap">01/12</span>
+                    </div>
+                    <p class="text-xs text-slate-600 line-clamp-2 mb-3">Nhắc mọi người chuẩn bị báo cáo cá nhân trước
+                        thứ 6 tuần này nhé.</p>
+                    <div class="flex items-center gap-4 text-xs text-slate-500">
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="eye" class="w-3 h-3"></i>
+                            <span>20/20 đã xem</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="message-square" class="w-3 h-3"></i>
+                            <span>3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Team Events -->
+        <section class="animate-fade-in delay-200">
+            <div class="flex justify-between items-center mb-3">
+                <h2 class="text-lg font-bold text-primary">Sự kiện Team sắp tới</h2>
+                <button class="text-xs text-secondary font-semibold">Tạo mới</button>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex gap-3">
+                <div
+                    class="w-12 h-12 rounded-lg bg-orange-100 flex flex-col items-center justify-center text-orange-600 shrink-0">
+                    <span class="text-[10px] font-bold uppercase">T12</span>
+                    <span class="text-lg font-bold leading-none">20</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800">Year End Party - Team Marketing</h3>
+                    <p class="text-xs text-slate-500 mb-1">18:00 • Nhà hàng Sen Tây Hồ</p>
+                    <div class="flex -space-x-2">
+                        <img src="https://i.pravatar.cc/150?u=1" class="w-6 h-6 rounded-full border-2 border-white"
+                            alt="User">
+                        <img src="https://i.pravatar.cc/150?u=2" class="w-6 h-6 rounded-full border-2 border-white"
+                            alt="User">
+                        <img src="https://i.pravatar.cc/150?u=3" class="w-6 h-6 rounded-full border-2 border-white"
+                            alt="User">
+                        <div
+                            class="w-6 h-6 rounded-full bg-slate-100 border-2 border-white flex items-center justify-center text-[8px] font-bold text-slate-500">
+                            +15</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Navigation (Manager) -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 pb-safe pt-2 px-6 flex justify-between items-center z-50">
+        <a href="manager_home.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Dash</span>
+        </a>
+        <a href="manager_approvals.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <div class="relative">
+                <i data-lucide="check-square" class="w-6 h-6"></i>
+                <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+            </div>
+            <span class="text-[10px] font-medium">Duyệt</span>
+        </a>
+        <div class="relative -top-6">
+            <a href="manager_assign_task.html"
+                class="w-14 h-14 rounded-full bg-primary text-white shadow-lg flex items-center justify-center transform hover:scale-105 transition-transform">
+                <i data-lucide="plus" class="w-7 h-7"></i>
+            </a>
+        </div>
+        <a href="manager_team_list.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="users" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Team</span>
+        </a>
+        <a href="profile.html"
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+            <i data-lucide="user" class="w-6 h-6"></i>
+            <span class="text-[10px] font-medium">Cá nhân</span>
+        </a>
+    </nav>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
