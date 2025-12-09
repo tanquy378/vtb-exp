@@ -89,49 +89,59 @@
 
         <div class="mt-6 flex items-center gap-4">
             <div class="h-px flex-1 bg-slate-200"></div>
-            <span class="text-xs text-slate-400">Hoặc đăng nhập bằng</span>
+            <span class="text-xs text-slate-400">Hoặc</span>
             <div class="h-px flex-1 bg-slate-200"></div>
         </div>
 
-        <div class="mt-6 flex justify-center gap-4">
-            <button
-                class="w-12 h-12 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center hover:bg-slate-100 transition-colors"
-                title="FaceID">
-                <i data-lucide="scan-face" class="w-6 h-6 text-slate-600"></i>
-            </button>
-            <button
-                class="w-12 h-12 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center hover:bg-slate-100 transition-colors"
-                title="Fingerprint">
-                <i data-lucide="fingerprint" class="w-6 h-6 text-slate-600"></i>
-            </button>
+        <div class="mt-4 text-center">
+            <a href="fido_register.html"
+                class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">
+                <i data-lucide="smartphone" class="w-4 h-4"></i>
+                Kích hoạt ứng dụng (Người dùng mới)
+            </a>
         </div>
-    </div>
 
-    <p class="absolute bottom-6 text-xs text-slate-400">© 2025 Big 4 Bank. All rights reserved.</p>
+        <div class="mt-6 flex justify-center gap-4">
 
-    <script>
-        lucide.createIcons();
+            <div class="mt-6 flex justify-center gap-4">
+                <button
+                    class="w-12 h-12 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center hover:bg-slate-100 transition-colors"
+                    title="FaceID">
+                    <i data-lucide="scan-face" class="w-6 h-6 text-slate-600"></i>
+                </button>
+                <button
+                    class="w-12 h-12 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center hover:bg-slate-100 transition-colors"
+                    title="Fingerprint">
+                    <i data-lucide="fingerprint" class="w-6 h-6 text-slate-600"></i>
+                </button>
+            </div>
+        </div>
 
-        function handleLogin(e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const btn = e.target.querySelector('button[type="submit"]');
+        <p class="absolute bottom-6 text-xs text-slate-400">© 2025 Big 4 Bank. All rights reserved.</p>
 
-            // Loading state
-            const originalContent = btn.innerHTML;
-            btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i>';
+        <script>
             lucide.createIcons();
 
-            setTimeout(() => {
-                localStorage.setItem('username', username);
-                if (username === 'demo_boss1') {
-                    window.location.href = 'manager_home.html';
-                } else {
-                    window.location.href = 'home.html';
-                }
-            }, 1000);
-        }
-    </script>
+            function handleLogin(e) {
+                e.preventDefault();
+                const username = document.getElementById('username').value;
+                const btn = e.target.querySelector('button[type="submit"]');
+
+                // Loading state
+                const originalContent = btn.innerHTML;
+                btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i>';
+                lucide.createIcons();
+
+                setTimeout(() => {
+                    localStorage.setItem('username', username);
+                    if (username === 'demo_boss1') {
+                        window.location.href = 'manager_home.html';
+                    } else {
+                        window.location.href = 'home.html';
+                    }
+                }, 1000);
+            }
+        </script>
 </body>
 
 </html>
